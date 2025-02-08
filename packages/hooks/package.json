@@ -1,0 +1,9 @@
+{
+  "name": "@mortise-tenon/hooks",
+  "version": "0.0.1",
+  "description": "use hooks",
+  "main": "index.ts",
+  "dependencies": {
+    "vue-demi": "^0.14.10"
+  }
+}

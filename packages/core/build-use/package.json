@@ -1,0 +1,29 @@
+{
+  "name": "mortise-tenon-use",
+  "type": "module",
+  "version": "0.1.1",
+  "description": "榫卯的vue组合式工作集",
+  "author": "nixwai",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nixwai/mortise-tenon"
+  },
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "types/index.d.ts",
+  "files": ["es", "lib", "types"],
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0-rc.1",
+    "vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@vueuse/core": "^11.1.0",
+    "vue-demi": "^0.14.10"
+  }
+}

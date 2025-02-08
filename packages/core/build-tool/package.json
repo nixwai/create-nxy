@@ -1,0 +1,19 @@
+{
+  "name": "mortise-tenon-tool",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "",
+  "author": "nixwai",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nixwai/mortise-tenon"
+  },
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "types/index.d.ts",
+  "files": ["es", "lib", "types"],
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  }
+}

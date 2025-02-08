@@ -1,0 +1,22 @@
+.VPDoc {
+  & > .container {
+    & > .content {
+      padding-right: 0;
+      padding-left: 0;
+
+      .content-container {
+        min-width: 100% !important;
+      }
+    }
+  }
+
+  .vitepress-demo-plugin__container {
+    tr:nth-child(2n) {
+      background: #fff0;
+    }
+
+    th {
+      background: #fff0;
+    }
+  }
+}

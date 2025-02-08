@@ -1,0 +1,85 @@
+{
+  "name": "create-libs",
+  "version": "1.0.0",
+  "description": "",
+  "author": "xy",
+  "license": "MIT",
+  "keywords": [
+    "vue"
+  ],
+  "bin": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "docs:dev": "pnpm run -C docs docs:dev",
+    "docs:build": "pnpm run -C docs docs:build",
+    "examples:dev": "pnpm run -C examples dev",
+    "examples:build": "pnpm run -C examples build",
+    "design:release": "pnpm run -C packages/core design:release",
+    "design:build": "pnpm run -C packages/core design:build",
+    "design:publish": "pnpm run -C packages/core design:publish",
+    "use:release": "pnpm run -C packages/core use:release",
+    "use:build": "pnpm run -C packages/core use:build",
+    "use:publish": "pnpm run -C packages/core use:publish",
+    "tool:release": "pnpm run -C packages/core tool:release",
+    "tool:build": "pnpm run -C packages/core tool:build",
+    "tool:publish": "pnpm run -C packages/core tool:publish",
+    "preset:release": "pnpm run -C packages/core preset:release",
+    "preset:build": "pnpm run -C packages/core preset:build",
+    "preset:publish": "pnpm run -C packages/core preset:publish",
+    "lint:style": "stylelint \"./**/*.{css,less,vue,html}\" --fix",
+    "prepare": "husky install",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "dependencies": {
+    "@mortise-tenon/components": "workspace:*",
+    "@mortise-tenon/hooks": "workspace:*",
+    "@mortise-tenon/presets": "workspace:^",
+    "@mortise-tenon/utils": "workspace:*",
+    "@vueuse/core": "^12.4.0",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.14.0",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^22.10.7",
+    "@unocss/eslint-plugin": "65.4.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitest/coverage-v8": "^2.1.8",
+    "@vue/test-utils": "^2.4.6",
+    "@vue/tsconfig": "^0.7.0",
+    "bumpp": "^9.10.1",
+    "eslint": "^9.18.0",
+    "eslint-plugin-format": "^1.0.1",
+    "happy-dom": "^16.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.3.0",
+    "postcss": "^8.5.1",
+    "postcss-html": "^1.8.0",
+    "postcss-scss": "^4.0.9",
+    "release-it": "^18.1.1",
+    "sass": "^1.83.4",
+    "stylelint": "^16.13.2",
+    "stylelint-config-recess-order": "^5.1.1",
+    "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard": "^37.0.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.10.1",
+    "typescript": "^5.7.3",
+    "unocss": "65.4.0",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8",
+    "vue": "^3.5.13",
+    "vue-tsc": "^2.2.0"
+  },
+  "lint-staged": {
+    "*.{vue,js,ts,tsx,jsx}": [
+      "eslint . --fix"
+    ]
+  }
+}

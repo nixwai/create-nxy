@@ -1,0 +1,14 @@
+{
+  "name": "cli",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "cli脚手架",
+  "author": "xy",
+  "license": "MIT",
+  "bin": "index.js",
+  "dependencies": {
+    "command-line-args": "^6.0.1",
+    "command-line-usage": "^7.0.3",
+    "prompts": "^2.4.2"
+  }
+}
