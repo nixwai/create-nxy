@@ -1,6 +1,6 @@
 import { parallel, series } from 'gulp';
-import { presetOutput } from '../paths';
 import { delPath, run } from '../tasks';
+import { presetOutput } from './paths';
 
 export default series(
   () => delPath(presetOutput),

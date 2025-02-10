@@ -1,8 +1,8 @@
 import { series } from 'gulp';
-import { toolOutput } from '../paths';
+import { REGISTRY } from '../config';
 import { run } from '../tasks';
+import { toolOutput } from './paths';
 
 export default series(
-  () => run('npm config set registry https://registry.npmjs.org'),
-  () => run('pnpm publish', toolOutput),
+  () => run(`pnpm publish --registry ${REGISTRY}`, toolOutput),
 );

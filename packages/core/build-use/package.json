@@ -1,13 +1,13 @@
 {
   "name": "mortise-tenon-use",
   "type": "module",
-  "version": "0.1.1",
-  "description": "榫卯的vue组合式工作集",
+  "version": "0.0.1",
+  "description": "vue组合式工作集",
   "author": "nixwai",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nixwai/mortise-tenon"
+    "url": "https://github.com/nixwai/create-libs"
   },
   "main": "lib/index.js",
   "module": "es/index.mjs",

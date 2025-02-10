@@ -2,12 +2,12 @@
   "name": "mortise-tenon-preset",
   "type": "module",
   "version": "0.0.1",
-  "description": "",
+  "description": "Unocss预设",
   "author": "nixwai",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nixwai/mortise-tenon"
+    "url": "https://github.com/nixwai/create-libs"
   },
   "exports": {
     ".": {

@@ -7,9 +7,9 @@ import { sidebar } from './configs/sidebar';
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'Mortise Tenon',
-  description: '榫卯是极为精巧的设计结构',
-  base: '/mortise-tenon/',
+  title: 'Libs',
+  description: '组件、预设、工具...库',
+  base: '/libs/',
   outDir: resolve(__dirname, '../../dist/docs'),
   vite: {
     plugins: [UnoCSS() as any],
@@ -23,7 +23,7 @@ export default defineConfig({
   themeConfig: {
     nav: navbar,
     sidebar,
-    socialLinks: [{ icon: 'github', link: 'https://github.com/nixwai/mortise-tenon' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/nixwai/create-libs' }],
     docFooter: {
       prev: '上一页',
       next: '下一页',

@@ -1,7 +1,7 @@
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
-import { presetOutput, presetRoot } from '../paths';
 import { copyPlugin, dtsPlugin } from '../vite-configs';
+import { presetOutput, presetRoot } from './paths';
 
 const entryIndex = resolve(__dirname, './index.ts');
 const entryHelper = resolve(__dirname, './helper.ts');
@@ -24,7 +24,6 @@ export default defineConfig({
       }],
     },
   },
-  resolve: { alias: { '@mortise-tenon/presets': presetRoot } },
   plugins: [
     dtsPlugin(presetRoot, presetOutput),
     copyPlugin(presetOutput),

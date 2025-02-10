@@ -1,7 +1,7 @@
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
-import { toolOutput, utilRoot } from '../paths';
 import { copyPlugin, dtsPlugin } from '../vite-configs';
+import { toolOutput, toolRoot } from './paths';
 
 const entryIndex = resolve(__dirname, './index.ts');
 
@@ -34,9 +34,8 @@ export default defineConfig({
       ],
     },
   },
-  resolve: { alias: { '@mortise-tenon/utils': utilRoot } },
   plugins: [
-    dtsPlugin(utilRoot, toolOutput),
+    dtsPlugin(toolRoot, toolOutput),
     copyPlugin(toolOutput),
   ],
 });

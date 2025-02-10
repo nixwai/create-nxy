@@ -1,1 +1,1 @@
-export * from '@mortise-tenon/presets';
+export * from '../../presets';

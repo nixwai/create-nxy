@@ -2,12 +2,12 @@
   "name": "mortise-tenon-design",
   "type": "module",
   "version": "0.0.1",
-  "description": "",
+  "description": "Vue组件库",
   "author": "nixwai",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nixwai/mortise-tenon"
+    "url": "https://github.com/nixwai/create-libs"
   },
   "main": "lib/index.js",
   "module": "es/index.mjs",
