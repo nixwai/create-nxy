@@ -1,0 +1,21 @@
+{
+  "name": "create-nxy",
+  "type": "module",
+  "version": "0.0.2",
+  "description": "cli脚手架",
+  "author": "xy",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nixwai/create-libs"
+  },
+  "bin": "index.js",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "command-line-args": "^6.0.1",
+    "command-line-usage": "^7.0.3",
+    "ora": "^8.2.0",
+    "prompts": "^2.4.2",
+    "simple-git": "^3.27.0"
+  }
+}

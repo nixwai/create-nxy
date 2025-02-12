@@ -1,11 +1,8 @@
 {
-  "name": "my-cli",
-  "type": "module",
+  "name": "@mortise-tenon/cli",
   "version": "0.0.1",
-  "description": "cli脚手架",
-  "author": "xy",
-  "license": "MIT",
-  "bin": "index.js",
+  "description": "脚手架",
+  "main": "index.ts",
   "dependencies": {
     "chalk": "^5.4.1",
     "command-line-args": "^6.0.1",
@@ -13,5 +10,10 @@
     "ora": "^8.2.0",
     "prompts": "^2.4.2",
     "simple-git": "^3.27.0"
+  },
+  "devDependencies": {
+    "@types/command-line-args": "^5.2.3",
+    "@types/command-line-usage": "^5.0.4",
+    "@types/prompts": "^2.4.9"
   }
 }
