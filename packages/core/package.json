@@ -14,7 +14,10 @@
     "tool:publish": "gulp -f build-tool/gulp-publish.ts",
     "preset:release": "gulp -f build-preset/gulp-release.ts",
     "preset:build": "gulp -f build-preset/gulp-build.ts",
-    "preset:publish": "gulp -f build-preset/gulp-publish.ts"
+    "preset:publish": "gulp -f build-preset/gulp-publish.ts",
+    "cli:release": "gulp -f build-cli/gulp-release.ts",
+    "cli:build": "gulp -f build-cli/gulp-build.ts",
+    "cli:publish": "gulp -f build-cli/gulp-publish.ts"
   },
   "publishConfig": {
     "access": "public"
