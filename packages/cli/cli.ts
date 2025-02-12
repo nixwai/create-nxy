@@ -3,7 +3,7 @@ import type { PromptObject } from 'prompts';
 import commandLineArgs from 'command-line-args';
 import commandLineUsage from 'command-line-usage';
 import prompts from 'prompts';
-import { version } from './package.json';
+import { version } from '../core/build-cli/package.json';
 import gitClone from './utils/gitClone.ts';
 
 // 配置命令参数
