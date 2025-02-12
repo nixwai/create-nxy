@@ -65,14 +65,6 @@ const promptsOptions: PromptObject[] = [
   },
 ];
 
-if (options.version) {
-  console.log(`v${version}`);
-}
-
-if (options.help) {
-  console.log(commandLineUsage(helpSections));
-}
-
 const cloneList = [
   'https://github.com/nixwai/create-libs.git',
   'git@github.com:nixwai/create-libs.git',
@@ -86,4 +78,16 @@ async function createProject() {
   gitClone(cloneList[res.clone], res.name);
 }
 
-createProject();
+function runCli() {
+  if (options.version) {
+    console.log(`v${version}`);
+  }
+
+  if (options.help) {
+    console.log(commandLineUsage(helpSections));
+  }
+
+  createProject();
+}
+
+runCli();
