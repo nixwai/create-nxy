@@ -9,11 +9,7 @@ const entryHelper = resolve(__dirname, './helper.ts');
 export default defineConfig({
   build: {
     emptyOutDir: false,
-    lib: {
-      entry: { index: entryIndex, helper: entryHelper },
-      name: 'mortise-tenon-preset',
-      fileName: 'mortise-tenon-preset',
-    },
+    lib: { entry: { index: entryIndex, helper: entryHelper } },
     rollupOptions: {
       external: ['unocss', '@unocss/preset-mini'],
       output: [{

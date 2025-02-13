@@ -7,7 +7,15 @@ withDefaults(defineProps<ButtonProps>(), { disabled: false });
 </script>
 
 <template>
-  <button :disabled="disabled">
+  <button :disabled="disabled" class="btn">
     <slot />
   </button>
 </template>
+
+<style lang="css" scoped>
+.btn {
+  padding: 8px 16px;
+  color: white;
+  border-radius: 8px;
+}
+</style>

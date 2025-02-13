@@ -9,11 +9,7 @@ export default defineConfig({
   build: {
     emptyOutDir: false,
     sourcemap: true,
-    lib: {
-      entry: { index: entryIndex },
-      name: 'mortise-tenon-tool',
-      fileName: 'mortise-tenon-tool',
-    },
+    lib: { entry: { index: entryIndex } },
     rollupOptions: {
       external: ['lodash-es', 'date-fns'],
       output: [

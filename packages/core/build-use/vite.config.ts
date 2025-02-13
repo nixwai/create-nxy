@@ -9,11 +9,7 @@ export default defineConfig({
   build: {
     emptyOutDir: false,
     sourcemap: true,
-    lib: {
-      entry: { index: entryIndex },
-      name: 'mortise-tenon-use',
-      fileName: 'mortise-tenon-use',
-    },
+    lib: { entry: { index: entryIndex } },
     rollupOptions: {
       external: ['vue-demi', '@vueuse/core'],
       output: [

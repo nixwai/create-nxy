@@ -12,11 +12,7 @@ export default defineConfig({
     emptyOutDir: false,
     sourcemap: true,
     cssCodeSplit: true,
-    lib: {
-      entry: { index: entryIndex },
-      name: 'mortise-tenon-design',
-      fileName: 'mortise-tenon-design',
-    },
+    lib: { entry: { index: entryIndex } },
     rollupOptions: {
       external: ['vue', '@vueuse/core'],
       output: [
