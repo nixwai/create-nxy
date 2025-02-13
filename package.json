@@ -39,10 +39,6 @@
     "vue": "^3.4.0"
   },
   "dependencies": {
-    "@mortise-tenon/components": "workspace:*",
-    "@mortise-tenon/hooks": "workspace:*",
-    "@mortise-tenon/presets": "workspace:^",
-    "@mortise-tenon/utils": "workspace:*",
     "@vueuse/core": "^12.5.0"
   },
   "devDependencies": {

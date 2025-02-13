@@ -1,5 +1,6 @@
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 import { copyPlugin } from '../vite-configs';
 import { cliOutput } from './paths';
 
@@ -10,7 +11,14 @@ export default defineConfig({
     emptyOutDir: false,
     lib: { entry: { index: entryIndex } },
     rollupOptions: {
-      external: ['command-line-args', 'command-line-usage', 'chalk', 'ora', 'prompts', 'simple-git'],
+      external: [
+        'fs-extra',
+        'glob',
+        'chalk',
+        'ora',
+        'prompts',
+        'simple-git',
+      ],
       output: [{
         format: 'es',
         entryFileNames: '[name].js',
@@ -21,6 +29,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    nodePolyfills(),
     copyPlugin(cliOutput),
   ],
 });
