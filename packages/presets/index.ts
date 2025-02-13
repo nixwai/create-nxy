@@ -3,7 +3,7 @@ import type { PresetOptions } from './types';
 import { definePreset } from 'unocss';
 
 export const presetMortiseTenon = definePreset<PresetOptions, Theme>((_options) => {
-  return { name: 'mortise-tenon-preset' };
+  return { name: 'unocss-preset' };
 });
 
 export * from './types';
