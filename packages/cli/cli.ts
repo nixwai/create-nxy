@@ -1,30 +1,10 @@
 import chalk from 'chalk';
-import commandLineArgs from 'command-line-args';
-import commandLineUsage from 'command-line-usage';
 import ora from 'ora';
 import prompts from 'prompts';
-import { version } from '../core/build-cli/package.json';
-import { cloneList, helpSections, promptsOptions } from './config';
+import { cloneList, promptsOptions } from './config';
 import { filterFiles, gitClone, updateName } from './utils';
 
-// 配置命令参数
-const optionDefinitions = [
-  { name: 'version', alias: 'v', type: Boolean },
-  { name: 'help', alias: 'h', type: Boolean },
-];
-const options = commandLineArgs(optionDefinitions);
-
 function runCli() {
-  if (options.version) {
-    console.log(`v${version}`);
-    return;
-  }
-
-  if (options.help) {
-    console.log(commandLineUsage(helpSections));
-    return;
-  }
-
   createProject();
 }
 

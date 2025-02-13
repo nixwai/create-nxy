@@ -12,8 +12,6 @@ export default defineConfig({
     lib: { entry: { index: entryIndex } },
     rollupOptions: {
       external: [
-        'command-line-args',
-        'command-line-usage',
         'fs-extra',
         'glob',
         'chalk',
