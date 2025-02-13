@@ -1,5 +1,7 @@
+import chalk from 'chalk';
 import commandLineArgs from 'command-line-args';
 import commandLineUsage from 'command-line-usage';
+import ora from 'ora';
 import prompts from 'prompts';
 import { version } from '../core/build-cli/package.json';
 import { cloneList, helpSections, promptsOptions } from './config';
@@ -33,11 +35,17 @@ async function createProject() {
     return;
   }
 
-  await gitClone(cloneList[res.clone], res.name);
-
-  await filterFiles(res.name, res.libs);
-
-  await updateName(res.name, res.name, res.libs);
+  const downSpinner = ora('正在构建...').start();
+  try {
+    await gitClone(cloneList[res.clone], res.name);
+    await filterFiles(res.name, res.libs);
+    await updateName(res.name, res.name, res.libs);
+    downSpinner.succeed(chalk.green('构建成功！'));
+  }
+  catch (err) {
+    downSpinner.fail();
+    console.log('err', chalk.red(err));
+  }
 }
 
 runCli();

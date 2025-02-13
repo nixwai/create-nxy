@@ -57,3 +57,10 @@ export const cloneList = [
   'https://github.com/nixwai/create-libs.git',
   'git@github.com:nixwai/create-libs.git',
 ];
+
+export const libFileMap: Record<string, string> = {
+  design: 'components',
+  preset: 'presets',
+  use: 'hooks',
+  tool: 'utils',
+};

@@ -15,6 +15,7 @@ export default defineConfig({
         'command-line-args',
         'command-line-usage',
         'fs-extra',
+        'glob',
         'chalk',
         'ora',
         'prompts',
