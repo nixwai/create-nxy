@@ -1,5 +1,5 @@
 {
-  "name": "@mortise-tenon/utils",
+  "name": "@create-nxy/utils",
   "version": "0.0.1",
   "description": "tool fn",
   "main": "index.ts",

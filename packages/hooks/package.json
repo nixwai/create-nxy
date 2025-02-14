@@ -1,5 +1,5 @@
 {
-  "name": "@mortise-tenon/hooks",
+  "name": "@create-nxy/hooks",
   "version": "0.0.1",
   "description": "use hooks",
   "main": "index.ts",

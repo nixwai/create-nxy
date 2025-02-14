@@ -1,5 +1,5 @@
 {
-  "name": "@mortise-tenon/presets",
+  "name": "@create-nxy/presets",
   "version": "0.0.1",
   "description": "unocss preset",
   "main": "index.ts",
