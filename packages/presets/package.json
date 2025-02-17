@@ -1,5 +1,5 @@
 {
-  "name": "@create-nxy/presets",
+  "name": "@nxy-libs/presets",
   "version": "0.0.1",
   "description": "unocss preset",
   "main": "index.ts",

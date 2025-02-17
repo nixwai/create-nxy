@@ -1,5 +1,5 @@
 {
-  "name": "@create-nxy/components",
+  "name": "@nxy-libs/components",
   "version": "0.0.1",
   "description": "组件",
   "main": "index.ts"

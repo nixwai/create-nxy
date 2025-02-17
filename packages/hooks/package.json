@@ -1,5 +1,5 @@
 {
-  "name": "@create-nxy/hooks",
+  "name": "@nxy-libs/hooks",
   "version": "0.0.1",
   "description": "use hooks",
   "main": "index.ts",

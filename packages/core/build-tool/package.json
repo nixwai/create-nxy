@@ -1,5 +1,5 @@
 {
-  "name": "create-nxy-tool",
+  "name": "nxy-libs-tool",
   "type": "module",
   "version": "0.0.1",
   "description": "工具库",

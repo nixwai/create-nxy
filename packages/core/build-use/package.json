@@ -1,5 +1,5 @@
 {
-  "name": "create-nxy-use",
+  "name": "nxy-libs-use",
   "type": "module",
   "version": "0.0.1",
   "description": "vue组合式工作集",
