@@ -1,5 +1,5 @@
 {
-  "name": "nxy-libs-preset",
+  "name": "create-nxy-preset",
   "type": "module",
   "version": "0.0.1",
   "description": "Unocss预设",

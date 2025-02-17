@@ -1,13 +1,6 @@
 {
-  "name": "nxy-libs",
-  "version": "1.0.0",
-  "description": "",
   "author": "xy",
   "license": "MIT",
-  "keywords": [
-    "vue"
-  ],
-  "bin": "index.js",
   "scripts": {
     "test": "vitest",
     "coverage": "vitest run --coverage",

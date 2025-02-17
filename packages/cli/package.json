@@ -1,5 +1,5 @@
 {
-  "name": "@nxy-libs/cli",
+  "name": "@create-nxy/cli",
   "version": "0.0.1",
   "description": "脚手架",
   "main": "index.ts",
