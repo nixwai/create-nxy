@@ -12,7 +12,7 @@
   "main": "lib/index.js",
   "module": "es/index.mjs",
   "types": "types/index.d.ts",
-  "files": ["es", "lib", "types"],
+  "files": ["es", "global.d.ts", "lib", "types"],
   "peerDependencies": {
     "vue": "^3.4.0"
   },
