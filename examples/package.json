@@ -10,6 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@unocss/reset": "^65.5.0"
+    "@unocss/reset": "^66.0.0"
   }
 }

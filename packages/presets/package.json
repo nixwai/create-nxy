@@ -4,6 +4,6 @@
   "description": "unocss preset",
   "main": "index.ts",
   "devDependencies": {
-    "@unocss/preset-mini": "^65.5.0"
+    "@unocss/preset-mini": "^66.0.0"
   }
 }
