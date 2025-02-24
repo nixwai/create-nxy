@@ -8,5 +8,5 @@ export default defineConfig({
   css: { preprocessorOptions: { scss: { api: 'modern-compiler' } } },
   plugins: [vue(), Unocss()],
   base: './',
-  build: { outDir: resolve(__dirname, '../dist/examples') },
+  build: { emptyOutDir: true, outDir: resolve(__dirname, '../dist/examples') },
 });
