@@ -24,9 +24,9 @@
   "types": "types/index.d.ts",
   "files": ["dist", "types"],
   "dependencies": {
-    "@unocss/preset-mini": "^65.4.3"
+    "@unocss/preset-mini": "^65.5.0"
   },
   "devDependencies": {
-    "unocss": "^65.4.0"
+    "unocss": "^65.5.0"
   }
 }
