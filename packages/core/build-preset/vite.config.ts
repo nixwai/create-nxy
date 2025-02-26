@@ -1,15 +1,17 @@
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
-import { copyPlugin, dtsPlugin } from '../vite-configs';
+import { dtsPlugin } from '../vite-configs';
 import { presetOutput, presetRoot } from './paths';
-
-const entryIndex = resolve(__dirname, './index.ts');
-const entryHelper = resolve(__dirname, './helper.ts');
 
 export default defineConfig({
   build: {
     emptyOutDir: false,
-    lib: { entry: { index: entryIndex, helper: entryHelper } },
+    lib: {
+      entry: {
+        index: resolve(presetRoot, 'index.ts'),
+        helper: resolve(presetRoot, 'helper.ts'),
+      },
+    },
     rollupOptions: {
       external: ['unocss', '@unocss/preset-mini'],
       output: [{
@@ -22,6 +24,5 @@ export default defineConfig({
   },
   plugins: [
     dtsPlugin(presetRoot, presetOutput),
-    copyPlugin(presetOutput),
   ],
 });

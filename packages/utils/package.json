@@ -1,12 +1,19 @@
 {
-  "name": "@create-nxy/utils",
+  "name": "@create-nxy/tool",
+  "type": "module",
   "version": "0.0.1",
-  "description": "tool fn",
-  "main": "index.ts",
+  "description": "工具库",
+  "author": "nixwai",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nixwai/create-libs"
+  },
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "types/index.d.ts",
+  "files": ["es", "lib", "types"],
   "dependencies": {
     "lodash-es": "^4.17.21"
-  },
-  "devDependencies": {
-    "@types/lodash-es": "^4.17.12"
   }
 }

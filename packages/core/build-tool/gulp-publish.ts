@@ -1,7 +1,7 @@
 import { series } from 'gulp';
+import { version } from '../../utils/package.json';
 import { REGISTRY } from '../config';
 import { run, versionTag } from '../tasks';
-import { version } from './package.json';
 import { toolOutput } from './paths';
 
 export default series(

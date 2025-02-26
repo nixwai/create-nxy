@@ -1,15 +1,12 @@
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
-import { copyPlugin } from '../vite-configs';
-import { cliOutput } from './paths';
-
-const entryIndex = resolve(__dirname, './index.ts');
+import { cliOutput, cliRoot } from './paths';
 
 export default defineConfig({
   build: {
     emptyOutDir: false,
-    lib: { entry: { index: entryIndex } },
+    lib: { entry: { index: resolve(cliRoot, 'index.ts') } },
     rollupOptions: {
       external: [
         'fs-extra',
@@ -30,6 +27,5 @@ export default defineConfig({
   },
   plugins: [
     nodePolyfills(),
-    copyPlugin(cliOutput),
   ],
 });
