@@ -19,7 +19,7 @@ async function createProject() {
   try {
     await gitClone(cloneList[answers.clone], answers.name);
     await filterFiles(answers.name, answers.libs);
-    await updatePackages(answers.name, answers.name, answers.libs);
+    await updatePackages(answers.name, answers.name, answers.libs, answers.format);
     downSpinner.succeed(chalk.green('构建成功！'));
   }
   catch (err) {

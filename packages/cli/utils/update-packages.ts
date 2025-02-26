@@ -4,14 +4,16 @@ import { libFileMap } from '../config';
 
 const scriptTypes = ['release', 'build', 'publish'];
 
-export async function updatePackages(projectPath: string, name: string, libs: string[]) {
+export async function updatePackages(projectPath: string, name: string, libs: string[], format: number) {
   // 更新包名
-  await changePackageName(projectPath, name);
+  await changePackageName(projectPath, `@${name}/monorepo`);
   await changePackageName(`${projectPath}/packages/core`, `@${name}/build`);
   for (let i = 0; i < libs.length; i++) {
     const type = libs[i];
-    await changePackageName(`${projectPath}/packages/${libFileMap[type]}`, `@${name}/${libFileMap[type]}`);
-    await changePackageName(`${projectPath}/packages/core/build-${type}`, `${name}-${type}`);
+    await changePackageName(
+      `${projectPath}/packages/${libFileMap[type]}`,
+      format === 0 ? `@${name}/${type}` : `${name}-${type}`,
+    );
   }
   // 移除脚本命令
   await removePackageScripts(projectPath, 'cli');

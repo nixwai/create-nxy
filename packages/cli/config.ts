@@ -16,6 +16,15 @@ export const promptsOptions: PromptObject[] = [
     ],
   },
   {
+    type: 'select',
+    name: 'format',
+    message: '库名格式',
+    choices: [
+      { title: '@项目名/库类型', value: 0 },
+      { title: '项目名-库类型', value: 1 },
+    ],
+  },
+  {
     type: 'multiselect',
     name: 'libs',
     message: '库类型',
