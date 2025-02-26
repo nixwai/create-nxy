@@ -1,7 +1,7 @@
 import { series } from 'gulp';
+import { version } from '../../presets/package.json';
 import { REGISTRY } from '../config';
 import { run, versionTag } from '../tasks';
-import { version } from './package.json';
 import { presetOutput } from './paths';
 
 export default series(

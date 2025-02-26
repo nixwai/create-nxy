@@ -1,15 +1,13 @@
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
-import { copyPlugin, dtsPlugin } from '../vite-configs';
+import { dtsPlugin } from '../vite-configs';
 import { toolOutput, toolRoot } from './paths';
-
-const entryIndex = resolve(__dirname, './index.ts');
 
 export default defineConfig({
   build: {
     emptyOutDir: false,
     sourcemap: true,
-    lib: { entry: { index: entryIndex } },
+    lib: { entry: { index: resolve(toolRoot, 'index.ts') } },
     rollupOptions: {
       external: ['lodash-es', 'date-fns'],
       output: [
@@ -32,6 +30,5 @@ export default defineConfig({
   },
   plugins: [
     dtsPlugin(toolRoot, toolOutput),
-    copyPlugin(toolOutput),
   ],
 });

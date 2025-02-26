@@ -1,10 +1,16 @@
-import { parallel, series } from 'gulp';
-import { delPath, run } from '../tasks';
-import { cliOutput } from './paths';
+import { resolve } from 'node:path';
+import { series } from 'gulp';
+import { copyFiles, delPath, run } from '../tasks';
+import { cliOutput, cliRoot } from './paths';
 
 export default series(
   () => delPath(cliOutput),
-  parallel(
-    () => run('vite build'),
+  () => run('vite build'),
+  () => copyFiles(
+    cliOutput,
+    [
+      resolve(cliRoot, 'README.md'),
+      resolve(cliRoot, 'package.json'),
+    ],
   ),
 );

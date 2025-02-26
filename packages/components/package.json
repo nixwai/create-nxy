@@ -1,6 +1,22 @@
 {
-  "name": "@create-nxy/components",
+  "name": "@create-nxy/design",
+  "type": "module",
   "version": "0.0.1",
-  "description": "组件",
-  "main": "index.ts"
+  "description": "Vue组件库",
+  "author": "nixwai",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nixwai/create-libs"
+  },
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "types/index.d.ts",
+  "files": ["es", "global.d.ts", "lib", "types"],
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "dependencies": {
+    "@vueuse/core": "^11.3.0"
+  }
 }

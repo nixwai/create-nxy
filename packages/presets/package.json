@@ -1,9 +1,32 @@
 {
-  "name": "@create-nxy/presets",
+  "name": "@create-nxy/preset",
+  "type": "module",
   "version": "0.0.1",
-  "description": "unocss preset",
-  "main": "index.ts",
+  "description": "Unocss预设",
+  "author": "nixwai",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nixwai/create-libs"
+  },
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./helper": {
+      "types": "./types/helper.d.ts",
+      "import": "./dist/helper.js"
+    }
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "types/index.d.ts",
+  "files": ["dist", "types"],
+  "dependencies": {
+    "@unocss/preset-mini": "^65.5.0"
+  },
   "devDependencies": {
-    "@unocss/preset-mini": "^66.0.0"
+    "unocss": "^65.5.0"
   }
 }

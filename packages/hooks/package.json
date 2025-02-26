@@ -1,9 +1,23 @@
 {
-  "name": "@create-nxy/hooks",
+  "name": "@create-nxy/use",
+  "type": "module",
   "version": "0.0.1",
-  "description": "use hooks",
-  "main": "index.ts",
+  "description": "vue组合式工作集",
+  "author": "nixwai",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nixwai/create-libs"
+  },
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "types/index.d.ts",
+  "files": ["es", "lib", "types"],
+  "peerDependencies": {
+    "vue": "^2.0.0 <2.7.0 || >=3.0.0"
+  },
   "dependencies": {
+    "@vueuse/core": "^11.3.0",
     "vue-demi": "^0.14.10"
   }
 }
