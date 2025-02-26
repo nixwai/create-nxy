@@ -1,10 +1,8 @@
 import { resolve } from 'node:path';
 import vue from '@vitejs/plugin-vue';
 import { defineConfig } from 'vite';
-import { copyPlugin, dtsPlugin, styleInjectPlugin } from '../vite-configs';
+import { dtsPlugin, styleInjectPlugin } from '../vite-configs';
 import { designOutput, designRoot } from './paths';
-
-const entryIndex = resolve(__dirname, './index.ts');
 
 export default defineConfig({
   css: { preprocessorOptions: { scss: { api: 'modern-compiler' } } },
@@ -12,7 +10,7 @@ export default defineConfig({
     emptyOutDir: false,
     sourcemap: true,
     cssCodeSplit: true,
-    lib: { entry: { index: entryIndex } },
+    lib: { entry: { index: resolve(designRoot, 'index.ts') } },
     rollupOptions: {
       external: ['vue', '@vueuse/core'],
       output: [
@@ -37,6 +35,5 @@ export default defineConfig({
     vue(),
     styleInjectPlugin(),
     dtsPlugin(designRoot, designOutput),
-    copyPlugin(designOutput, ['README.md', 'package.json', '../../components/global.d.ts']),
   ],
 });
