@@ -1,5 +1,5 @@
 {
-  "name": "@create-nxy/cli",
+  "name": "create-nxy",
   "type": "module",
   "version": "2.0.0",
   "description": "cli脚手架",
