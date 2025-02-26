@@ -1,15 +1,13 @@
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
-import { copyPlugin, dtsPlugin } from '../vite-configs';
-import { hookRoot, useOutput } from './paths';
-
-const entryIndex = resolve(__dirname, './index.ts');
+import { dtsPlugin } from '../vite-configs';
+import { useOutput, useRoot } from './paths';
 
 export default defineConfig({
   build: {
     emptyOutDir: false,
     sourcemap: true,
-    lib: { entry: { index: entryIndex } },
+    lib: { entry: { index: resolve(useRoot, 'index.ts') } },
     rollupOptions: {
       external: ['vue-demi', '@vueuse/core'],
       output: [
@@ -31,7 +29,6 @@ export default defineConfig({
     },
   },
   plugins: [
-    dtsPlugin(hookRoot, useOutput),
-    copyPlugin(useOutput),
+    dtsPlugin(useRoot, useOutput),
   ],
 });
