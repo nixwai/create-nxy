@@ -1,6 +1,6 @@
 import { resolve } from 'node:path';
 import { series } from 'gulp';
-import { copyFiles, delPath, run } from '../tasks';
+import { copyFiles, delPath, editPackage, run } from '../tasks';
 import { presetOutput, presetRoot } from './paths';
 
 export default series(
@@ -13,4 +13,16 @@ export default series(
       resolve(presetRoot, 'package.json'),
     ],
   ),
+  () => editPackage(presetOutput, (config) => {
+    config.exports = {
+      '.': {
+        types: './types/index.d.ts',
+        import: './dist/index.js',
+      },
+      './helper': {
+        types: './types/helper.d.ts',
+        import: './dist/helper.js',
+      },
+    };
+  }),
 );
