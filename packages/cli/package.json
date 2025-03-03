@@ -3,13 +3,14 @@
   "type": "module",
   "version": "2.0.0",
   "description": "cli脚手架",
-  "author": "xy",
+  "author": "nixwai",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/nixwai/create-libs"
   },
-  "bin": "index.js",
+  "main": "./dist/index.js",
+  "bin": "./dist/index.js",
   "dependencies": {
     "chalk": "^5.4.1",
     "fs-extra": "^11.3.0",

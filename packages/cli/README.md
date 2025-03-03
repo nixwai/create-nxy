@@ -7,3 +7,7 @@
 ```bash
 npm create nxy
 ```
+或
+```bash
+npx create-nxy
+```
