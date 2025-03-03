@@ -8,8 +8,8 @@ export default defineConfig({
     emptyOutDir: false,
     lib: {
       entry: {
-        index: resolve(presetRoot, 'index.ts'),
-        helper: resolve(presetRoot, 'helper.ts'),
+        index: resolve(presetRoot, 'src/index.ts'),
+        helper: resolve(presetRoot, 'src/helper.ts'),
       },
     },
     rollupOptions: {
@@ -18,11 +18,11 @@ export default defineConfig({
         format: 'es',
         entryFileNames: '[name].js',
         exports: 'named',
-        dir: resolve(presetOutput, 'dist'),
+        dir: presetOutput,
       }],
     },
   },
   plugins: [
-    dtsPlugin(presetRoot, presetOutput),
+    dtsPlugin(resolve(presetRoot, 'src'), presetOutput),
   ],
 });

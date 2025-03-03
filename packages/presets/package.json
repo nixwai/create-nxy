@@ -9,10 +9,20 @@
     "type": "git",
     "url": "https://github.com/nixwai/create-libs"
   },
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./helper": {
+      "types": "./dist/types/helper.d.ts",
+      "import": "./dist/helper.js"
+    }
+  },
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "types": "types/index.d.ts",
-  "files": ["dist", "types"],
+  "types": "dist/types/index.d.ts",
+  "files": ["dist"],
   "dependencies": {
     "@unocss/preset-mini": "^66.0.0"
   },
