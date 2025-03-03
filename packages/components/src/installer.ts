@@ -1,6 +1,6 @@
 import type { App, Component, Plugin } from 'vue';
+import { version } from '../package.json';
 import { Btn } from './button';
-import { version } from './package.json';
 
 const INSTALLED_KEY = Symbol('INSTALLED_KEY');
 

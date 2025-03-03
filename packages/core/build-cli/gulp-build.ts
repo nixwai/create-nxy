@@ -1,16 +1,9 @@
 import { resolve } from 'node:path';
 import { series } from 'gulp';
-import { copyFiles, delPath, run } from '../tasks';
-import { cliOutput, cliRoot } from './paths';
+import { delPath, run } from '../tasks';
+import { cliOutput } from './paths';
 
 export default series(
-  () => delPath(cliOutput),
+  () => delPath(resolve(cliOutput)),
   () => run('vite build'),
-  () => copyFiles(
-    cliOutput,
-    [
-      resolve(cliRoot, 'README.md'),
-      resolve(cliRoot, 'package.json'),
-    ],
-  ),
 );

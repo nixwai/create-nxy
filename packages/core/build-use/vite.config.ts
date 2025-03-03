@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     emptyOutDir: false,
     sourcemap: true,
-    lib: { entry: { index: resolve(useRoot, 'index.ts') } },
+    lib: { entry: { index: resolve(useRoot, 'src/index.ts') } },
     rollupOptions: {
       external: ['vue-demi', '@vueuse/core'],
       output: [
@@ -29,6 +29,6 @@ export default defineConfig({
     },
   },
   plugins: [
-    dtsPlugin(useRoot, useOutput),
+    dtsPlugin(resolve(useRoot, 'src'), useOutput),
   ],
 });

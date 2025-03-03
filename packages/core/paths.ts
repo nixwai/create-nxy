@@ -4,6 +4,3 @@ import { resolve } from 'node:path';
 export const projRoot = resolve(__dirname, '../../');
 /** pkg根目录 */
 export const pkgRoot = resolve(projRoot, 'packages');
-
-/** `/dist` */
-export const buildOutput = resolve(projRoot, 'dist');

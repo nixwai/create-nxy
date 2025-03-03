@@ -6,14 +6,14 @@ const scriptTypes = ['release', 'build', 'publish'];
 
 export async function updatePackages(projectPath: string, name: string, libs: string[], format: number) {
   // 更新包名
-  await changePackageName(projectPath, `@${name}/monorepo`);
-  await changePackageName(`${projectPath}/packages/core`, `@${name}/build`);
+  await changePackage(projectPath, { name: `@${name}/monorepo` });
+  await changePackage(`${projectPath}/packages/core`, { name: `@${name}/core` });
   for (let i = 0; i < libs.length; i++) {
     const type = libs[i];
-    await changePackageName(
-      `${projectPath}/packages/${libFileMap[type]}`,
-      format === 0 ? `@${name}/${type}` : `${name}-${type}`,
-    );
+    const libName = format === 0 ? `@${name}/${type}` : `${name}-${type}`;
+    await changePackage(`${projectPath}/packages/${libFileMap[type]}`, { name: libName });
+    // 添加工作空间库包
+    await changePackage(projectPath, { dependencies: { [libName]: 'workspace:*' } });
   }
   // 移除脚本命令
   await removePackageScripts(projectPath, 'cli');
@@ -26,15 +26,27 @@ export async function updatePackages(projectPath: string, name: string, libs: st
   }
 }
 
-/** 修改package.json中的name */
-async function changePackageName(filePath: string, name: string) {
-  const pkgPath = path.join(filePath, 'package.json');
-  if (!fs.existsSync(pkgPath)) {
-    return;
+/** 修改package.json中的配置 */
+export async function changePackage(filePath: string, config: Record<string, any>) {
+  try {
+    const pkgPath = path.join(filePath, 'package.json');
+    if (!fs.existsSync(pkgPath)) {
+      return;
+    }
+    const pkg = await fs.readJson(pkgPath);
+    Object.keys(config).forEach((key) => {
+      if (typeof pkg[key] === 'object') {
+        Object.assign(pkg[key], config[key]);
+      }
+      else {
+        pkg[key] = config[key];
+      }
+    });
+    await fs.writeJson(pkgPath, pkg, { spaces: 2 });
   }
-  const pkg = await fs.readJson(pkgPath);
-  pkg.name = name;
-  await fs.writeJson(pkgPath, pkg, { spaces: 2 });
+  catch (error) {
+    console.error('Error editing package.json:', error);
+  }
 }
 
 /** 移除package.json中的scripts命令 */

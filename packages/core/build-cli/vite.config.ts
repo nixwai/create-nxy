@@ -6,7 +6,7 @@ import { cliOutput, cliRoot } from './paths';
 export default defineConfig({
   build: {
     emptyOutDir: false,
-    lib: { entry: { index: resolve(cliRoot, 'index.ts') } },
+    lib: { entry: { index: resolve(cliRoot, 'src/index.ts') } },
     rollupOptions: {
       external: [
         'fs-extra',

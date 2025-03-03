@@ -30,9 +30,9 @@ export const promptsOptions: PromptObject[] = [
     message: '库类型',
     choices: [
       { title: 'Vue组件库', value: 'design' },
-      { title: 'Vue组合式工具库', value: 'use' },
       { title: 'Unocss预设', value: 'preset' },
       { title: '工具库', value: 'tool' },
+      { title: 'Vue组合式工具库', value: 'use' },
     ],
   },
 ];
