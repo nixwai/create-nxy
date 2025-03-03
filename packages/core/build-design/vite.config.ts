@@ -10,7 +10,7 @@ export default defineConfig({
     emptyOutDir: false,
     sourcemap: true,
     cssCodeSplit: true,
-    lib: { entry: { index: resolve(designRoot, 'index.ts') } },
+    lib: { entry: { index: resolve(designRoot, 'src/index.ts') } },
     rollupOptions: {
       external: ['vue', '@vueuse/core'],
       output: [
@@ -34,6 +34,6 @@ export default defineConfig({
   plugins: [
     vue(),
     styleInjectPlugin(),
-    dtsPlugin(designRoot, designOutput),
+    dtsPlugin(resolve(designRoot, 'src'), designOutput),
   ],
 });
