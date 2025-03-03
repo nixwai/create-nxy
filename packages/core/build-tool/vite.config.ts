@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     emptyOutDir: false,
     sourcemap: true,
-    lib: { entry: { index: resolve(toolRoot, 'index.ts') } },
+    lib: { entry: { index: resolve(toolRoot, 'src/index.ts') } },
     rollupOptions: {
       external: ['lodash-es', 'date-fns'],
       output: [
@@ -29,6 +29,6 @@ export default defineConfig({
     },
   },
   plugins: [
-    dtsPlugin(toolRoot, toolOutput),
+    dtsPlugin(resolve(toolRoot, 'src'), toolOutput),
   ],
 });
