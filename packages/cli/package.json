@@ -1,7 +1,7 @@
 {
   "name": "create-nxy",
   "type": "module",
-  "version": "2.1.0-beta.1",
+  "version": "2.1.0-beta.2",
   "description": "cli脚手架",
   "author": "nixwai",
   "license": "MIT",
