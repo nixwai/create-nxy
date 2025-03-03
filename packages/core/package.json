@@ -1,5 +1,5 @@
 {
-  "name": "@create-nxy/build",
+  "name": "@create-nxy/core",
   "type": "module",
   "version": "0.0.1",
   "scripts": {

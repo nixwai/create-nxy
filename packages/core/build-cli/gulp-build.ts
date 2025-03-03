@@ -1,9 +1,9 @@
 import { resolve } from 'node:path';
 import { series } from 'gulp';
 import { delPath, run } from '../tasks';
-import { cliRoot } from './paths';
+import { cliOutput } from './paths';
 
 export default series(
-  () => delPath(resolve(cliRoot, 'index.mjs')),
+  () => delPath(resolve(cliOutput)),
   () => run('vite build'),
 );
