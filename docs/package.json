@@ -12,6 +12,7 @@
     "docs:preview": "vitepress preview"
   },
   "devDependencies": {
+    "postcss": "^8.5.3",
     "vitepress": "^1.6.3",
     "vitepress-demo-plugin": "^1.3.1"
   }
