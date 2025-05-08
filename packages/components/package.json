@@ -12,11 +12,14 @@
   "main": "dist/lib/index.js",
   "module": "dist/es/index.mjs",
   "types": "dist/types/index.d.ts",
-  "files": ["dist", "global.d.ts"],
+  "files": [
+    "dist",
+    "global.d.ts"
+  ],
   "peerDependencies": {
     "vue": "^3.4.0"
   },
   "dependencies": {
-    "@vueuse/core": "^11.3.0"
+    "@vueuse/core": "^12.8.2"
   }
 }

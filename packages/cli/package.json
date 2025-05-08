@@ -11,11 +11,13 @@
   },
   "main": "./dist/index.js",
   "bin": "./dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "chalk": "^5.4.1",
     "fs-extra": "^11.3.0",
-    "glob": "^11.0.1",
+    "glob": "^11.0.2",
     "ora": "^8.2.0",
     "prompts": "^2.4.2",
     "simple-git": "^3.27.0"
