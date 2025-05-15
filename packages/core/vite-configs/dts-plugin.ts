@@ -8,7 +8,7 @@ export function dtsPlugin(rootPath: string, outputPath: string) {
   return dts({
     entryRoot: rootPath,
     include: rootPath,
-    exclude: [resolve(rootPath, '**/__test__')],
+    exclude: [resolve(rootPath, '**/__test__', resolve(rootPath, '**/*.test.ts'))],
     outDir: resolve(outputPath, 'types'),
     tsconfigPath: resolve(projRoot, 'tsconfig.json'),
   }) as PluginOption;

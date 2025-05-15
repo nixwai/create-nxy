@@ -20,6 +20,6 @@
     "vue": "^3.4.0"
   },
   "dependencies": {
-    "@vueuse/core": "^12.8.2"
+    "@vueuse/core": "^13.2.0"
   }
 }

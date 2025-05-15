@@ -16,7 +16,6 @@
     "dist"
   ],
   "dependencies": {
-    "@vueuse/core": "^12.8.2",
     "vue-demi": "^0.14.10"
   }
 }

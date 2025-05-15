@@ -1,1 +1,1 @@
-export * from './use-load';
+export * from './useLoad';

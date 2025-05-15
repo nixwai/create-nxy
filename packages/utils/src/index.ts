@@ -1,1 +1,1 @@
-export * from './object/format-key';
+export * from './formatKey';
