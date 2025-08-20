@@ -10,7 +10,7 @@ export function styleInjectPlugin(): PluginOption {
       const vueBundler: Record<string, any> = {};
       for (const bundler of Object.values(bundle)) {
         const { fileName } = bundler;
-        const directoryMatch = fileName.split('/').slice(0, 2).join('/');
+        const directoryMatch = fileName.split('/').slice(0, 3).join('/'); // 获取需要引入的css目录
         // 收集需要组件的css文件地址
         if (fileName.includes('.css')) {
           if (!cssPath[directoryMatch]) {
