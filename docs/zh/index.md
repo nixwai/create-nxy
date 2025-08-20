@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 示例
-      link: /zh/examples/install
+      link: /examples/install
 
 features:
   - title: 标签
