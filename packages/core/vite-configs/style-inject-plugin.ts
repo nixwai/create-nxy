@@ -7,24 +7,25 @@ export function styleInjectPlugin(): PluginOption {
     name: 'style-inject',
     generateBundle({ format }, bundle) {
       const cssPath: Record<string, string[]> = {};
-      const vueBundler: Record<string, any> = {};
+      const indexBundler: Record<string, any> = {};
       for (const bundler of Object.values(bundle)) {
         const { fileName } = bundler;
-        const directoryMatch = fileName.split('/').slice(0, 3).join('/'); // 获取需要引入的css目录
-        // 收集需要组件的css文件地址
+        // 收集有css的组件文件地址
+        const srcCompPath = fileName.split('/').slice(0, -2).join('/'); // 获取需要引入的css目录
         if (fileName.includes('.css')) {
-          if (!cssPath[directoryMatch]) {
-            cssPath[directoryMatch] = [];
+          if (!cssPath[srcCompPath]) {
+            cssPath[srcCompPath] = [];
           }
-          cssPath[directoryMatch].push(fileName);
+          cssPath[srcCompPath].push(fileName);
         }
-        // 收集需要插入css的组件入口文件
-        if (directoryMatch && 'code' in bundler && [`${directoryMatch}/index.js`, `${directoryMatch}/index.mjs`].includes(fileName)) {
-          vueBundler[directoryMatch] = bundler;
+        // 收集所有的index入口代码文件
+        if ('code' in bundler && (fileName.includes('index.js') || fileName.includes('index.mjs'))) {
+          const sreIndexPath = fileName.split('/').slice(0, -1).join('/');
+          indexBundler[sreIndexPath] = bundler;
         }
       }
-      for (const key in vueBundler) {
-        const bundler = vueBundler[key];
+      for (const key in indexBundler) {
+        const bundler = indexBundler[key];
         if (!cssPath[key]) {
           continue;
         }

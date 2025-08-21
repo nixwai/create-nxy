@@ -5,7 +5,6 @@ import { dtsPlugin, styleInjectPlugin } from '../vite-configs';
 import { designOutput, designRoot } from './paths';
 
 export default defineConfig({
-  css: { preprocessorOptions: { scss: { api: 'modern-compiler' } } },
   build: {
     emptyOutDir: false,
     sourcemap: true,
