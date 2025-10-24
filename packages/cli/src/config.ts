@@ -38,8 +38,8 @@ export const promptsOptions: PromptObject[] = [
 ];
 
 export const cloneList = [
-  'https://github.com/nixwai/create-libs.git',
-  'git@github.com:nixwai/create-libs.git',
+  'https://github.com/nixwai/create-nxy.git',
+  'git@github.com:nixwai/create-nxy.git',
 ];
 
 export const libFileMap: Record<string, string> = {
