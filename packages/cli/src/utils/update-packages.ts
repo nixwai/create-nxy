@@ -7,7 +7,7 @@ const scriptTypes = ['release', 'build', 'publish'];
 export async function updatePackages(projectPath: string, name: string, libs: string[], format: number) {
   // 更新包名
   await changePackage(projectPath, { name: `@${name}/monorepo` });
-  await changePackage(`${projectPath}/packages/core`, { name: `@${name}/core` });
+  await changePackage(`${projectPath}/packages/build-system`, { name: `@${name}/build-system` });
   for (let i = 0; i < libs.length; i++) {
     const type = libs[i];
     const libName = format === 0 ? `@${name}/${type}` : `${name}-${type}`;
@@ -17,11 +17,11 @@ export async function updatePackages(projectPath: string, name: string, libs: st
   }
   // 移除脚本命令
   await removePackageScripts(projectPath, 'cli');
-  await removePackageScripts(`${projectPath}/packages/core`, 'cli');
+  await removePackageScripts(`${projectPath}/packages/build-system`, 'cli');
   for (const type in libFileMap) {
     if (!libs.includes(type)) {
       await removePackageScripts(projectPath, type);
-      await removePackageScripts(`${projectPath}/packages/core`, type);
+      await removePackageScripts(`${projectPath}/packages/build-system`, type);
     }
   }
 }

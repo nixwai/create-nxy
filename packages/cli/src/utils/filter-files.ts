@@ -6,11 +6,11 @@ export async function filterFiles(projectPath: string, libs: string[]) {
   await deleteFiles(`${projectPath}/.git`);
   await deleteFiles(`${projectPath}/pnpm-lock.yaml`);
   await deleteFiles(`${projectPath}/packages/cli`);
-  await deleteFiles(`${projectPath}/packages/core/build-cli`);
+  await deleteFiles(`${projectPath}/packages/build-system/build-cli-system`);
   for (const type in libFileMap) {
     if (!libs.includes(type)) {
       await deleteFiles(`${projectPath}/packages/${libFileMap[type]}`);
-      await deleteFiles(`${projectPath}/packages/core/build-${type}`);
+      await deleteFiles(`${projectPath}/packages/build-system/build-${libFileMap[type]}`);
     }
   }
 }
