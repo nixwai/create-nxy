@@ -7,5 +7,5 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [vue(), Unocss()],
   base: './',
-  build: { emptyOutDir: true, outDir: resolve(__dirname, '../dist/examples') },
+  build: { emptyOutDir: true, outDir: resolve(__dirname, '../dist/play') },
 });
