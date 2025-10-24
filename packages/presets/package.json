@@ -26,9 +26,9 @@
     "dist"
   ],
   "dependencies": {
-    "@unocss/preset-mini": "^66.4.2"
+    "@unocss/preset-mini": "^66.5.4"
   },
   "devDependencies": {
-    "unocss": "^66.4.2"
+    "unocss": "^66.5.4"
   }
 }

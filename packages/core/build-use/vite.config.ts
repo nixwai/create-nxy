@@ -9,7 +9,7 @@ export default defineConfig({
     sourcemap: true,
     lib: { entry: { index: resolve(useRoot, 'src/index.ts') } },
     rollupOptions: {
-      external: ['vue-demi', '@vueuse/core'],
+      external: ['vue-demi'],
       output: [
         {
           format: 'es',
