@@ -1,0 +1,38 @@
+{
+  "name": "@create-nxy/build-system",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "design:release": "gulp -f build-components/gulp-release.ts",
+    "design:build": "gulp -f build-components/gulp-build.ts",
+    "design:publish": "gulp -f build-components/gulp-publish.ts",
+    "use:release": "gulp -f build-hooks/gulp-release.ts",
+    "use:build": "gulp -f build-hooks/gulp-build.ts",
+    "use:publish": "gulp -f build-hooks/gulp-publish.ts",
+    "tool:release": "gulp -f build-utils/gulp-release.ts",
+    "tool:build": "gulp -f build-utils/gulp-build.ts",
+    "tool:publish": "gulp -f build-utils/gulp-publish.ts",
+    "preset:release": "gulp -f build-presets/gulp-release.ts",
+    "preset:build": "gulp -f build-presets/gulp-build.ts",
+    "preset:publish": "gulp -f build-presets/gulp-publish.ts",
+    "cli:release": "gulp -f build-cli-system/gulp-release.ts",
+    "cli:build": "gulp -f build-cli-system/gulp-build.ts",
+    "cli:publish": "gulp -f build-cli-system/gulp-publish.ts"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "vue": ">= 3.4.0 < 3.5.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/gulp": "^4.0.17",
+    "fs-extra": "^11.3.2",
+    "gulp": "^5.0.1",
+    "gulp-cli": "^3.1.0",
+    "sucrase": "^3.35.0",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-plugin-node-polyfills": "^0.24.0"
+  }
+}
