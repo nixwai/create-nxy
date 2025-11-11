@@ -1,6 +1,5 @@
-import path from 'node:path';
-import fs from 'fs-extra';
 import { libFileMap } from '../config';
+import { editPackage } from '../tasks';
 
 const scriptTypes = ['release', 'build', 'publish'];
 
@@ -28,12 +27,7 @@ export async function updatePackages(projectPath: string, name: string, libs: st
 
 /** 修改package.json中的配置 */
 export async function changePackage(filePath: string, config: Record<string, any>) {
-  try {
-    const pkgPath = path.join(filePath, 'package.json');
-    if (!fs.existsSync(pkgPath)) {
-      return;
-    }
-    const pkg = await fs.readJson(pkgPath);
+  editPackage(filePath, (pkg) => {
     Object.keys(config).forEach((key) => {
       if (typeof pkg[key] === 'object') {
         Object.assign(pkg[key], config[key]);
@@ -42,36 +36,26 @@ export async function changePackage(filePath: string, config: Record<string, any
         pkg[key] = config[key];
       }
     });
-    await fs.writeJson(pkgPath, pkg, { spaces: 2 });
-  }
-  catch (error) {
-    console.error('Error editing package.json:', error);
-  }
+  });
 }
 
 /** 移除package.json中的scripts命令 */
 async function removePackageScripts(filePath: string, name: string) {
-  const pkgPath = path.join(filePath, 'package.json');
-
-  if (!fs.existsSync(pkgPath)) {
-    return;
-  }
-  const pkg = await fs.readJson(pkgPath);
-  // 如果scripts字段不存在，直接返回
-  if (!pkg.scripts) {
-    return;
-  }
-  const scripts = scriptTypes.map(type => `${name}:${type}`);
-  // 移除指定的脚本命令
-  scripts.forEach((script) => {
-    if (pkg.scripts[script]) {
-      delete pkg.scripts[script];
+  editPackage(filePath, (pkg) => {
+    // 如果scripts字段不存在，直接返回
+    if (!pkg.scripts) {
+      return;
+    }
+    const scripts = scriptTypes.map(type => `${name}:${type}`);
+    // 移除指定的脚本命令
+    scripts.forEach((script) => {
+      if (pkg.scripts[script]) {
+        delete pkg.scripts[script];
+      }
+    });
+    // 如果scripts对象为空，则删除整个scripts字段
+    if (Object.keys(pkg.scripts).length === 0) {
+      delete pkg.scripts;
     }
   });
-  // 如果scripts对象为空，则删除整个scripts字段
-  if (Object.keys(pkg.scripts).length === 0) {
-    delete pkg.scripts;
-  }
-  // 写回package.json
-  await fs.writeJson(pkgPath, pkg, { spaces: 2 });
 }
