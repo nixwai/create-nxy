@@ -23,6 +23,7 @@
     "preset:release": "pnpm run -C packages/build-system preset:release",
     "preset:build": "pnpm run -C packages/build-system preset:build",
     "preset:publish": "pnpm run -C packages/build-system preset:publish",
+    "icon:optimize": "pnpm run -C packages/icons/svg optimize",
     "cli:release": "pnpm run -C packages/build-system cli:release",
     "cli:build": "pnpm run -C packages/build-system cli:build",
     "cli:publish": "pnpm run -C packages/build-system cli:publish",

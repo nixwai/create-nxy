@@ -1,0 +1,13 @@
+{
+  "name": "@create-nxy/icons-svg",
+  "version": "1.0.0",
+  "files": [
+    "*.svg"
+  ],
+  "scripts": {
+    "optimize": "svgo -f . -o ."
+  },
+  "devDependencies": {
+    "svgo": "^4.0.0"
+  }
+}
