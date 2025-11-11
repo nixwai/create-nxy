@@ -11,7 +11,7 @@ function runCli() {
 /** 创建项目 */
 async function createProject() {
   const answers = await prompts(promptsOptions);
-  if (!answers.name) {
+  if (!answers.name || typeof answers.clone !== 'number' || typeof answers.format !== 'number') {
     return;
   }
 

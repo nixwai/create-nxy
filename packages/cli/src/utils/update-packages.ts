@@ -5,14 +5,14 @@ const scriptTypes = ['release', 'build', 'publish'];
 
 export async function updatePackages(projectPath: string, name: string, libs: string[], format: number) {
   // 更新包名
-  await changePackage(projectPath, { name: `@${name}/monorepo` });
-  await changePackage(`${projectPath}/packages/build-system`, { name: `@${name}/build-system` });
+  await changePackageName(projectPath, { name: `@${name}/monorepo` });
+  await changePackageName(`${projectPath}/packages/build-system`, { name: `@${name}/build-system` });
   for (let i = 0; i < libs.length; i++) {
     const type = libs[i];
     const libName = format === 0 ? `@${name}/${type}` : `${name}-${type}`;
-    await changePackage(`${projectPath}/packages/${libFileMap[type]}`, { name: libName });
+    await changePackageName(`${projectPath}/packages/${libFileMap[type]}`, { name: libName });
     // 添加工作空间库包
-    await changePackage(projectPath, { dependencies: { [libName]: 'workspace:*' } });
+    await changePackageName(projectPath, { dependencies: { [libName]: 'workspace:*' } });
   }
   // 移除脚本命令
   await removePackageScripts(projectPath, 'cli');
@@ -23,11 +23,17 @@ export async function updatePackages(projectPath: string, name: string, libs: st
       await removePackageScripts(`${projectPath}/packages/build-system`, type);
     }
   }
+  // 修改打包全部的脚本命令
+  await editPackage(projectPath, (pkg) => {
+    if (pkg.scripts) {
+      pkg.scripts.build = libs.map(type => `pnpm build:${type}`).join(' & ');
+    }
+  });
 }
 
 /** 修改package.json中的配置 */
-export async function changePackage(filePath: string, config: Record<string, any>) {
-  editPackage(filePath, (pkg) => {
+function changePackageName(filePath: string, config: Record<string, any>) {
+  return editPackage(filePath, (pkg) => {
     Object.keys(config).forEach((key) => {
       if (typeof pkg[key] === 'object') {
         Object.assign(pkg[key], config[key]);
@@ -40,8 +46,8 @@ export async function changePackage(filePath: string, config: Record<string, any
 }
 
 /** 移除package.json中的scripts命令 */
-async function removePackageScripts(filePath: string, name: string) {
-  editPackage(filePath, (pkg) => {
+function removePackageScripts(filePath: string, name: string) {
+  return editPackage(filePath, (pkg) => {
     // 如果scripts字段不存在，直接返回
     if (!pkg.scripts) {
       return;
