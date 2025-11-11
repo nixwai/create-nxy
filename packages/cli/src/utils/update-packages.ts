@@ -9,8 +9,10 @@ export async function updatePackages(projectPath: string, name: string, libs: st
   await changePackageName(`${projectPath}/packages/build-system`, { name: `@${name}/build-system` });
   for (let i = 0; i < libs.length; i++) {
     const type = libs[i];
+    const libFile = libFileMap[type];
+    await changePackageName(`${projectPath}/packages/build-system/build-${libFile}`, { name: `@${name}/build-${libFile}` });
     const libName = format === 0 ? `@${name}/${type}` : `${name}-${type}`;
-    await changePackageName(`${projectPath}/packages/${libFileMap[type]}`, { name: libName });
+    await changePackageName(`${projectPath}/packages/${libFile}`, { name: libName });
     // 添加工作空间库包
     await changePackageName(projectPath, { dependencies: { [libName]: 'workspace:*' } });
   }
