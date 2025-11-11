@@ -1,5 +1,5 @@
-import fs from 'node:fs/promises';
 import { basename, dirname, resolve } from 'node:path';
+import fs from 'fs-extra';
 
 export async function copyFiles(outputPath: string, copyPaths: string[]): Promise<void> {
   try {

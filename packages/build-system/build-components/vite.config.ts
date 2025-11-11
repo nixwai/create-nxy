@@ -1,8 +1,9 @@
 import { resolve } from 'node:path';
 import vue from '@vitejs/plugin-vue';
 import { defineConfig } from 'vite';
-import { dtsPlugin, styleInjectPlugin } from '../vite-configs';
+import { dtsPlugin } from '../vite-configs';
 import { designOutput, designRoot } from './paths';
+import { styleInjectPlugin } from './style-inject-plugin';
 
 export default defineConfig({
   build: {
