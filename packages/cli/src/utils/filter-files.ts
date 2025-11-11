@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import { sync } from 'glob';
 import { libFileMap } from '../config';
 
-export async function filterFiles(projectPath: string, libs: string[]) {
+export async function filterFiles(projectPath: string, libs: string[] = []) {
   await deleteFiles(`${projectPath}/.git`);
   await deleteFiles(`${projectPath}/pnpm-lock.yaml`);
   await deleteFiles(`${projectPath}/packages/cli`);

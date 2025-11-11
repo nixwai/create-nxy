@@ -1,3 +1,4 @@
+import type { PluginOption } from 'vite';
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
@@ -26,6 +27,6 @@ export default defineConfig({
     },
   },
   plugins: [
-    nodePolyfills(),
+    nodePolyfills() as PluginOption,
   ],
 });
