@@ -15,6 +15,10 @@
     "preset:release": "gulp -f build-presets/gulp-release.ts",
     "preset:build": "gulp -f build-presets/gulp-build.ts",
     "preset:publish": "gulp -f build-presets/gulp-publish.ts",
+    "icon:generate": "gulp -f build-icons/gulp-generate.ts",
+    "icon:release": "gulp -f build-icons/gulp-release.ts",
+    "icon:build": "gulp -f build-icons/gulp-build.ts",
+    "icon:publish": "gulp -f build-icons/gulp-publish.ts",
     "cli:release": "gulp -f build-cli-system/gulp-release.ts",
     "cli:build": "gulp -f build-cli-system/gulp-build.ts",
     "cli:publish": "gulp -f build-cli-system/gulp-publish.ts"

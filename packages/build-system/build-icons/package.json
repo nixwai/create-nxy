@@ -1,0 +1,12 @@
+{
+  "name": "@create-nxy/build-icons",
+  "type": "module",
+  "version": "0.0.1",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "camelcase": "^9.0.0",
+    "fast-glob": "^3.3.3",
+    "fs-extra": "^11.3.2",
+    "prettier": "^3.6.2"
+  }
+}

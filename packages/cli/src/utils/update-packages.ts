@@ -1,8 +1,6 @@
 import { libFileMap } from '../config';
 import { editPackage } from '../tasks';
 
-const scriptTypes = ['release', 'build', 'publish'];
-
 export async function updatePackages(projectPath: string, name: string, libs: string[], format: number) {
   // 更新包名
   await changePackageName(projectPath, { name: `@${name}/monorepo` });
@@ -54,13 +52,12 @@ function removePackageScripts(filePath: string, name: string) {
     if (!pkg.scripts) {
       return;
     }
-    const scripts = scriptTypes.map(type => `${name}:${type}`);
     // 移除指定的脚本命令
-    scripts.forEach((script) => {
-      if (pkg.scripts[script]) {
-        delete pkg.scripts[script];
+    for (const key in pkg.scripts) {
+      if (key.startsWith(`${name}:`)) {
+        delete pkg.scripts[key];
       }
-    });
+    }
     // 如果scripts对象为空，则删除整个scripts字段
     if (Object.keys(pkg.scripts).length === 0) {
       delete pkg.scripts;

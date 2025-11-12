@@ -1,0 +1,19 @@
+{
+  "name": "@create-nxy/icons-vue",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "图标库",
+  "author": "nixwai",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nixwai/create-nxy"
+  },
+  "keywords": ["icon", "svg", "vue"],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ]
+}

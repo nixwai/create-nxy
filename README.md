@@ -18,6 +18,7 @@ npx create-nxy
   ✅ Vue组合式工具库<br />
   ✅ Unocss预设<br />
   ✅ 工具函数库<br />
+  ✅ Vue图标库<br />
 
 ### 三、集成技术
 
