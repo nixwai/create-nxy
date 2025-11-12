@@ -26,7 +26,7 @@ export async function updatePackages(projectPath: string, name: string, libs: st
   // 修改打包全部的脚本命令
   await editPackage(projectPath, (pkg) => {
     if (pkg.scripts) {
-      pkg.scripts.build = libs.map(type => `pnpm build:${type}`).join(' & ');
+      pkg.scripts.build = `run-p ${libs.map(type => `build:${type}`).join(' ')}`;
     }
   });
 }
