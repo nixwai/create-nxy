@@ -24,7 +24,7 @@
     "cli:publish": "gulp publish -f build-cli-system/index.ts"
   },
   "devDependencies": {
-    "@types/gulp": "^4.0.17",
+    "@types/gulp": "^4.0.18",
     "gulp": "^5.0.1",
     "gulp-cli": "^3.1.0",
     "sucrase": "^3.35.0",
