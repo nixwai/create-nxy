@@ -9,7 +9,8 @@ export async function updatePackages(projectPath: string, name: string, libs: st
     const type = libs[i];
     const libFile = libFileMap[type];
     await changePackageName(`${projectPath}/packages/build-system/build-${libFile}`, { name: `@${name}/build-${libFile}` });
-    const libName = format === 0 ? `@${name}/${type}` : `${name}-${type}`;
+    const libType = type === 'icon' ? 'icons-vue' : type;
+    const libName = format === 0 ? `@${name}/${libType}` : `${name}-${libType}`;
     await changePackageName(`${projectPath}/packages/${libFile}`, { name: libName });
     // 添加工作空间库包
     await changePackageName(projectPath, { dependencies: { [libName]: 'workspace:*' } });
@@ -26,7 +27,7 @@ export async function updatePackages(projectPath: string, name: string, libs: st
   // 修改打包全部的脚本命令
   await editPackage(projectPath, (pkg) => {
     if (pkg.scripts) {
-      pkg.scripts.build = `run-p ${libs.map(type => `build:${type}`).join(' ')}`;
+      pkg.scripts.build = `run-p ${libs.map(type => `${type}:build`).join(' ')}`;
     }
   });
 }

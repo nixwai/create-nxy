@@ -3,16 +3,21 @@ import { sync } from 'glob';
 import { libFileMap } from '../config';
 
 export async function filterFiles(projectPath: string, libs: string[] = []) {
-  await deleteFiles(`${projectPath}/.git`);
-  await deleteFiles(`${projectPath}/pnpm-lock.yaml`);
-  await deleteFiles(`${projectPath}/packages/cli`);
-  await deleteFiles(`${projectPath}/packages/build-system/build-cli-system`);
+  const deletePaths = [
+    `${projectPath}/.git`,
+    `${projectPath}/pnpm-lock.yaml`,
+    `${projectPath}/packages/cli`,
+    `${projectPath}/packages/build-system/build-cli-system`,
+  ];
   for (const type in libFileMap) {
     if (!libs.includes(type)) {
-      await deleteFiles(`${projectPath}/packages/${libFileMap[type]}`);
-      await deleteFiles(`${projectPath}/packages/build-system/build-${libFileMap[type]}`);
+      deletePaths.push(
+        `${projectPath}/packages/${libFileMap[type]}`,
+        `${projectPath}/packages/build-system/build-${libFileMap[type]}`,
+      );
     }
   }
+  await Promise.all(deletePaths.map(deleteFiles));
 }
 
 async function deleteFiles(filePath: string) {

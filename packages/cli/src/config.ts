@@ -33,7 +33,7 @@ export const promptsOptions: PromptObject[] = [
       { title: 'Unocss预设', value: 'preset' },
       { title: '工具库', value: 'tool' },
       { title: 'Vue组合式工具库', value: 'use' },
-      { title: 'Vue图标库', value: 'icons-vue' },
+      { title: 'Vue图标库', value: 'icon' },
     ],
   },
 ];
@@ -44,9 +44,9 @@ export const cloneList = [
 ];
 
 export const libFileMap: Record<string, string> = {
-  'design': 'components',
-  'preset': 'presets',
-  'use': 'hooks',
-  'tool': 'utils',
-  'icons-vue': 'icons',
+  design: 'components',
+  preset: 'presets',
+  use: 'hooks',
+  tool: 'utils',
+  icon: 'icons',
 };
