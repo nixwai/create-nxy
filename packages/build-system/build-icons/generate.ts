@@ -1,18 +1,10 @@
 import type { BuiltInParserName } from 'prettier';
 import path from 'node:path';
-
 import camelcase from 'camelcase';
-
 import glob from 'fast-glob';
 import { emptyDir, ensureDir, readFile, writeFile } from 'fs-extra';
-import { series } from 'gulp';
-
 import { format } from 'prettier';
 import { pathComponents, pathSvg } from './paths';
-
-export default series(
-  () => generateIconComp(),
-);
 
 /** 获取 svg 文件 */
 function getSvgFiles() {
