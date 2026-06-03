@@ -15,7 +15,7 @@ export const release = series(
 export const build = series(
   () => generateIconComp(),
   () => delPath(iconOutput),
-  () => run('vite build'),
+  () => run('tsdown --config tsdown.config.ts', __dirname),
 );
 
 export const publish = series(

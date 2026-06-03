@@ -1,8 +1,5 @@
 {
   "name": "@create-nxy/build-cli",
   "type": "module",
-  "version": "0.0.1",
-  "devDependencies": {
-    "vite-plugin-node-polyfills": "^0.28.0"
-  }
+  "version": "0.0.1"
 }
