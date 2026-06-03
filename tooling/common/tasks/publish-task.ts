@@ -1,4 +1,4 @@
-import { REGISTRY } from '../build-config';
+import { REGISTRY } from '../config';
 import { run } from './command-runner-task';
 import { versionTag } from './version-tag-generator';
 

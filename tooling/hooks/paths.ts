@@ -1,3 +1,3 @@
-import { createModulePaths } from '../common/build-paths';
+import { createModulePaths } from '../common/paths';
 
 export const [useRoot, useOutput] = createModulePaths('hooks');
