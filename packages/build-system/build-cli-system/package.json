@@ -3,6 +3,6 @@
   "type": "module",
   "version": "0.0.1",
   "devDependencies": {
-    "vite-plugin-node-polyfills": "^0.24.0"
+    "vite-plugin-node-polyfills": "^0.28.0"
   }
 }

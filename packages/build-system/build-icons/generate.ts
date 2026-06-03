@@ -34,7 +34,7 @@ function getName(file: string) {
 function formatCode(code: string, parser: BuiltInParserName = 'typescript') {
   return format(code, {
     parser,
-    semi: false,
+    semi: true,
     trailingComma: 'none',
     singleQuote: true,
   });
@@ -51,9 +51,7 @@ async function transformToVueComponent(file: string) {
   const vue = await formatCode(
     `
     <script lang="ts" setup>
-    defineOptions({
-      name: ${JSON.stringify(componentName)}
-    })
+    defineOptions({ name: ${JSON.stringify(componentName)} });
     </script>
 
     <template>
@@ -72,7 +70,7 @@ async function generateEntry(files: string[]) {
     files
       .map((file) => {
         const { fileName, componentName } = getName(file);
-        return `export { default as ${componentName} } from './${fileName}.vue'`;
+        return `export { default as ${componentName} } from './${fileName}.vue';`;
       })
       .join('\n'),
   );
