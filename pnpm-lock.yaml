@@ -118,7 +118,7 @@ importers:
         specifier: ^1.5.1
         version: 1.5.1(shiki@3.0.0)(vitepress@1.6.4(@algolia/client-search@5.53.0)(@types/node@25.9.1)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.15)(sass@1.100.0)(search-insights@2.17.3)(typescript@6.0.3))(vue@3.5.35(typescript@6.0.3))
 
-  packages/build-system:
+  tooling:
     devDependencies:
       '@types/gulp':
         specifier: ^4.0.18
@@ -136,9 +136,9 @@ importers:
         specifier: ^0.22.1
         version: 0.22.1
 
-  packages/build-system/build-cli-system: {}
+  tooling/cli-system: {}
 
-  packages/build-system/build-components:
+  tooling/components:
     devDependencies:
       '@tsdown/css':
         specifier: ^0.22.1
@@ -147,9 +147,9 @@ importers:
         specifier: ^7.2.0
         version: 7.2.0(@types/node@25.9.1)(jiti@2.7.0)(sass@1.100.0)(vue@3.5.35(typescript@6.0.3))(yaml@2.9.0)
 
-  packages/build-system/build-hooks: {}
+  tooling/hooks: {}
 
-  packages/build-system/build-icons:
+  tooling/icons:
     devDependencies:
       '@types/fs-extra':
         specifier: ^11.0.4
@@ -170,9 +170,9 @@ importers:
         specifier: ^7.2.0
         version: 7.2.0(@types/node@25.9.1)(jiti@2.7.0)(sass@1.100.0)(vue@3.5.35(typescript@6.0.3))(yaml@2.9.0)
 
-  packages/build-system/build-presets: {}
+  tooling/presets: {}
 
-  packages/build-system/build-utils: {}
+  tooling/utils: {}
 
   packages/cli:
     dependencies:
