@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "build": "gulp build -f build/index.ts",
     "design:release": "gulp release -f components/index.ts",
     "design:build": "gulp build -f components/index.ts",
     "design:publish": "gulp publish -f components/index.ts",

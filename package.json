@@ -11,7 +11,7 @@
     "docs:build": "pnpm run -C docs docs:build",
     "play:dev": "pnpm run -C playground dev",
     "play:build": "pnpm run -C playground build",
-    "build": "run-p design:build use:build tool:build preset:build icon:build cli:build",
+    "build": "pnpm run -C tooling build",
     "design:release": "pnpm run -C tooling design:release",
     "design:build": "pnpm run -C tooling design:build",
     "design:publish": "pnpm run -C tooling design:publish",

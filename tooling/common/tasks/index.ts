@@ -1,3 +1,4 @@
+export * from './build-progress-task';
 export * from './command-runner-task';
 export * from './delete-path-task';
 export * from './publish-task';
