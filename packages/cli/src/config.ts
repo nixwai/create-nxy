@@ -49,8 +49,8 @@ export const promptsOptions: PromptObject[] = [
     name: 'mode',
     message: '构建模式',
     choices: [
-      { title: '创建完整项目', value: projectMode },
-      { title: '仅生成 tooling', value: toolingMode },
+      { title: '创建完整的库项目', value: projectMode },
+      { title: '为已有项目生成打包工具', value: toolingMode },
     ],
   },
   {
@@ -62,14 +62,14 @@ export const promptsOptions: PromptObject[] = [
   {
     type: (prev, values) => isToolingMode(prev, values) ? 'text' : null,
     name: 'targetPath',
-    message: '目标项目路径',
+    message: '项目路径',
     initial: '.',
     validate: validateRequired,
   },
   {
     type: (prev, values) => isToolingMode(prev, values) ? 'select' : null,
     name: 'hasTooling',
-    message: '目标项目是否已有 tooling 文件夹',
+    message: '项目是否已有 tooling 文件夹',
     choices: [
       { title: '否，生成完整 tooling', value: false },
       { title: '是，追加打包库', value: true },
@@ -104,7 +104,7 @@ export const promptsOptions: PromptObject[] = [
     name: 'features',
     message: '附加功能',
     choices: [
-      { title: 'CSS 样式预设', value: cssPreset },
+      { title: 'CSS 样式预设（SCSS + stylelint）', value: cssPreset },
       { title: '文档 docs', value: 'docs', selected: true },
       { title: '演练场 playground', value: 'playground', selected: true },
     ],

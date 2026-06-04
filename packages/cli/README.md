@@ -11,3 +11,7 @@ npm create nxy
 ```bash
 npx create-nxy
 ```
+
+## 详细使用文档
+
+[create-nxy](https://github.com/nixwai/create-nxy)
