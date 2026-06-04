@@ -1,5 +1,12 @@
 import fs from 'fs-extra';
-import { featureFileMap, featureScriptMap, libFileMap } from '../config';
+import {
+  cssPackageDependencies,
+  cssPackageScripts,
+  cssPreset,
+  featureFileMap,
+  featureScriptMap,
+  libFileMap,
+} from '../config';
 import { editPackage } from '../tasks';
 
 export async function updatePackages(
@@ -23,18 +30,22 @@ export async function updatePackages(
     await changePackageName(projectPath, { dependencies: { [libName]: 'workspace:*' } });
   }
   // 移除脚本命令
-  await removePackageScripts(projectPath, 'cli');
-  await removePackageScripts(`${projectPath}/tooling`, 'cli');
+  await removePackageScripts(projectPath, 'cli:');
+  await removePackageScripts(`${projectPath}/tooling`, 'cli:');
   for (const type in libFileMap) {
     if (!libs.includes(type)) {
       await removePackageScripts(projectPath, type);
-      await removePackageScripts(`${projectPath}/tooling`, type);
+      await removePackageScripts(`${projectPath}/tooling`, `${type}:`);
     }
   }
   for (const type in featureScriptMap) {
     if (!features.includes(type)) {
-      await removePackageScripts(projectPath, featureScriptMap[type]);
+      await removePackageScripts(projectPath, `${featureScriptMap[type]}:`);
     }
+  }
+  if (!features.includes(cssPreset)) {
+    await removePackageScriptKeys(projectPath, cssPackageScripts);
+    await removePackageDependencies(projectPath, cssPackageDependencies);
   }
   // 修改打包全部的脚本命令
   await editPackage(projectPath, (pkg) => {
@@ -103,7 +114,7 @@ function removePackageScripts(filePath: string, name: string) {
     }
     // 移除指定的脚本命令
     for (const key in pkg.scripts) {
-      if (key.startsWith(`${name}:`)) {
+      if (key.startsWith(`${name}`)) {
         delete pkg.scripts[key];
       }
     }
@@ -111,5 +122,41 @@ function removePackageScripts(filePath: string, name: string) {
     if (Object.keys(pkg.scripts).length === 0) {
       delete pkg.scripts;
     }
+  });
+}
+
+/** 移除package.json中的指定scripts命令 */
+function removePackageScriptKeys(filePath: string, names: string[]) {
+  return editPackage(filePath, (pkg) => {
+    if (!pkg.scripts) {
+      return;
+    }
+
+    names.forEach((name) => {
+      delete pkg.scripts[name];
+    });
+
+    if (Object.keys(pkg.scripts).length === 0) {
+      delete pkg.scripts;
+    }
+  });
+}
+
+/** 移除package.json中的指定依赖 */
+function removePackageDependencies(filePath: string, names: string[]) {
+  return editPackage(filePath, (pkg) => {
+    ['dependencies', 'devDependencies'].forEach((key) => {
+      if (!pkg[key]) {
+        return;
+      }
+
+      names.forEach((name) => {
+        delete pkg[key][name];
+      });
+
+      if (Object.keys(pkg[key]).length === 0) {
+        delete pkg[key];
+      }
+    });
   });
 }

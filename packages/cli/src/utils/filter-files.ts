@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import { sync } from 'glob';
-import { featureFileMap, libFileMap } from '../config';
+import { cssConfigFiles, cssPreset, featureFileMap, libFileMap } from '../config';
 
 export async function filterFiles(projectPath: string, libs: string[] = [], features: string[] = []) {
   const deletePaths = [
@@ -21,6 +21,9 @@ export async function filterFiles(projectPath: string, libs: string[] = [], feat
     if (!features.includes(type)) {
       deletePaths.push(`${projectPath}/${featureFileMap[type]}`);
     }
+  }
+  if (!features.includes(cssPreset)) {
+    deletePaths.push(...cssConfigFiles.map(file => `${projectPath}/${file}`));
   }
   await Promise.all(deletePaths.map(deleteFiles));
 }

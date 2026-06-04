@@ -1,5 +1,7 @@
 import type { PromptObject } from 'prompts';
 
+export const cssPreset = 'css';
+
 export const promptsOptions: PromptObject[] = [
   {
     type: 'text',
@@ -29,11 +31,11 @@ export const promptsOptions: PromptObject[] = [
     name: 'libs',
     message: '库类型',
     choices: [
-      { title: 'Vue组件库', value: 'design' },
-      { title: 'Unocss预设', value: 'preset' },
+      { title: 'Vue 组件库', value: 'design' },
+      { title: 'Unocss 预设', value: 'preset' },
       { title: '工具库', value: 'tool' },
-      { title: 'Vue组合式工具库', value: 'use' },
-      { title: 'Vue图标库', value: 'icon' },
+      { title: 'Vue 组合式工具库', value: 'use' },
+      { title: 'Vue 图标库', value: 'icon' },
     ],
   },
   {
@@ -41,6 +43,7 @@ export const promptsOptions: PromptObject[] = [
     name: 'features',
     message: '附加功能',
     choices: [
+      { title: 'CSS 样式预设', value: cssPreset },
       { title: '文档 docs', value: 'docs', selected: true },
       { title: '演练场 playground', value: 'playground', selected: true },
     ],
@@ -69,3 +72,26 @@ export const featureScriptMap: Record<string, string> = {
   docs: 'docs',
   playground: 'play',
 };
+
+export const cssConfigFiles = [
+  'stylelint.config.cjs',
+  '.stylelintignore',
+];
+
+export const cssPackageScripts = [
+  'lint:style',
+];
+
+export const cssPackageDependencies = [
+  'postcss',
+  'postcss-html',
+  'postcss-scss',
+  'sass',
+  'stylelint',
+  'stylelint-config-recess-order',
+  'stylelint-config-recommended-scss',
+  'stylelint-config-recommended-vue',
+  'stylelint-config-standard',
+  'stylelint-order',
+  'stylelint-scss',
+];
