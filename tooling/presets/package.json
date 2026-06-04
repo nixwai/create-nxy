@@ -1,5 +1,9 @@
 {
   "name": "@create-nxy/build-presets",
   "type": "module",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "devDependencies": {
+    "@unocss/preset-mini": "^66.7.0",
+    "unocss": "^66.7.0"
+  }
 }

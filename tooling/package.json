@@ -25,9 +25,11 @@
   },
   "devDependencies": {
     "@types/gulp": "^4.0.18",
+    "bumpp": "^11.1.0",
     "gulp": "^5.0.1",
     "gulp-cli": "^3.1.0",
     "sucrase": "^3.35.1",
-    "tsdown": "^0.22.1"
+    "tsdown": "^0.22.1",
+    "typescript": "^6.0.3"
   }
 }

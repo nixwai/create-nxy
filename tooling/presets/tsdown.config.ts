@@ -7,14 +7,12 @@ const projRoot = resolve(buildPresetsRoot, '../..');
 const presetRoot = resolve(projRoot, 'packages/presets');
 const presetOutput = resolve(presetRoot, 'dist');
 
-const entry = {
-  index: 'src/index.ts',
-  helper: 'src/helper.ts',
-};
-
 const sharedConfig = {
   cwd: presetRoot,
-  entry,
+  entry: {
+    index: 'src/index.ts',
+  // helper: 'src/helper.ts', // 有需要时可以添加
+  },
   clean: false,
   platform: 'neutral' as const,
   deps: { neverBundle: ['unocss', '@unocss/preset-mini'] },
