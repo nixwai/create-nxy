@@ -1,0 +1,35 @@
+{
+  "name": "@create-nxy/tooling",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "design:release": "gulp release -f components/index.ts",
+    "design:build": "gulp build -f components/index.ts",
+    "design:publish": "gulp publish -f components/index.ts",
+    "use:release": "gulp release -f hooks/index.ts",
+    "use:build": "gulp build -f hooks/index.ts",
+    "use:publish": "gulp publish -f hooks/index.ts",
+    "tool:release": "gulp release -f utils/index.ts",
+    "tool:build": "gulp build -f utils/index.ts",
+    "tool:publish": "gulp publish -f utils/index.ts",
+    "preset:release": "gulp release -f presets/index.ts",
+    "preset:build": "gulp build -f presets/index.ts",
+    "preset:publish": "gulp publish -f presets/index.ts",
+    "icon:generate": "gulp generate -f icons/index.ts",
+    "icon:release": "gulp release -f icons/index.ts",
+    "icon:build": "gulp build -f icons/index.ts",
+    "icon:publish": "gulp publish -f icons/index.ts",
+    "cli:release": "gulp release -f cli-system/index.ts",
+    "cli:build": "gulp build -f cli-system/index.ts",
+    "cli:publish": "gulp publish -f cli-system/index.ts"
+  },
+  "devDependencies": {
+    "@types/gulp": "^4.0.18",
+    "bumpp": "^11.1.0",
+    "gulp": "^5.0.1",
+    "gulp-cli": "^3.1.0",
+    "sucrase": "^3.35.1",
+    "tsdown": "^0.22.1",
+    "typescript": "^6.0.3"
+  }
+}

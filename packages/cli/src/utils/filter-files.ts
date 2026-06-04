@@ -7,13 +7,13 @@ export async function filterFiles(projectPath: string, libs: string[] = []) {
     `${projectPath}/.git`,
     `${projectPath}/pnpm-lock.yaml`,
     `${projectPath}/packages/cli`,
-    `${projectPath}/packages/build-system/build-cli-system`,
+    `${projectPath}/tooling/cli-system`,
   ];
   for (const type in libFileMap) {
     if (!libs.includes(type)) {
       deletePaths.push(
         `${projectPath}/packages/${libFileMap[type]}`,
-        `${projectPath}/packages/build-system/build-${libFileMap[type]}`,
+        `${projectPath}/tooling/${libFileMap[type]}`,
       );
     }
   }

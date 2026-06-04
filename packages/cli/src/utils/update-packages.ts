@@ -4,11 +4,11 @@ import { editPackage } from '../tasks';
 export async function updatePackages(projectPath: string, name: string, libs: string[], format: number) {
   // 更新包名
   await changePackageName(projectPath, { name: `@${name}/monorepo` });
-  await changePackageName(`${projectPath}/packages/build-system`, { name: `@${name}/build-system` });
+  await changePackageName(`${projectPath}/tooling`, { name: `@${name}/tooling` });
   for (let i = 0; i < libs.length; i++) {
     const type = libs[i];
     const libFile = libFileMap[type];
-    await changePackageName(`${projectPath}/packages/build-system/build-${libFile}`, { name: `@${name}/build-${libFile}` });
+    await changePackageName(`${projectPath}/tooling/${libFile}`, { name: `@${name}/build-${libFile}` });
     const libType = type === 'icon' ? 'icons-vue' : type;
     const libName = format === 0 ? `@${name}/${libType}` : `${name}-${libType}`;
     await changePackageName(`${projectPath}/packages/${libFile}`, { name: libName });
@@ -17,11 +17,11 @@ export async function updatePackages(projectPath: string, name: string, libs: st
   }
   // 移除脚本命令
   await removePackageScripts(projectPath, 'cli');
-  await removePackageScripts(`${projectPath}/packages/build-system`, 'cli');
+  await removePackageScripts(`${projectPath}/tooling`, 'cli');
   for (const type in libFileMap) {
     if (!libs.includes(type)) {
       await removePackageScripts(projectPath, type);
-      await removePackageScripts(`${projectPath}/packages/build-system`, type);
+      await removePackageScripts(`${projectPath}/tooling`, type);
     }
   }
   // 修改打包全部的脚本命令
