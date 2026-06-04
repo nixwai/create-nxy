@@ -1,2 +1,2 @@
-export * from './copy-files-task';
-export * from './package-edit-task';
+export * from './copy-files';
+export * from './package-edit';
