@@ -28,19 +28,3 @@ export class BuildCommandError extends Error {
     this.signal = result.signal;
   }
 }
-
-export interface BuildJobFailure<Job = unknown> {
-  job: Job
-  error: unknown
-}
-
-/** 多个构建 job 的汇总失败，用于让 Gulp/pnpm 以非零状态退出。 */
-export class BuildJobsError<Job = unknown> extends Error {
-  failures: BuildJobFailure<Job>[];
-
-  constructor(title: string, failures: BuildJobFailure<Job>[]) {
-    super(`${title} failed in ${failures.length} job(s)`);
-    this.name = 'BuildJobsError';
-    this.failures = failures;
-  }
-}
