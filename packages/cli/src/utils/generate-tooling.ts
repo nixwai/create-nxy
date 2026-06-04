@@ -234,10 +234,15 @@ function mergePackageScripts(sourcePkg: Record<string, any>, targetPkg: Record<s
   if (!sourcePkg.scripts) {
     return;
   }
+  const targetBuildLibs = targetPkg.scripts?.build?.split('run-p ')[1]?.trim().split(/\s+/).filter(Boolean) || [];
+  const sourceBuildLibs = sourcePkg.scripts?.build?.split('run-p ')[1]?.trim().split(/\s+/).filter(Boolean) || [];
+  const buildScript = `run-p ${[...new Set([...targetBuildLibs, ...sourceBuildLibs])].join(' ')}`;
+
   targetPkg.scripts = {
     ...targetPkg.scripts,
     ...sourcePkg.scripts,
   };
+  targetPkg.scripts.build = buildScript;
 }
 
 /** 合并依赖时优先保留目标项目已有版本 */

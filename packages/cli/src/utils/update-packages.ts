@@ -48,17 +48,12 @@ export async function updatePackages(
     await removePackageDependencies(projectPath, cssPackageDependencies);
   }
   // 修改打包全部的脚本命令
-  await editPackage(projectPath, (pkg) => {
-    if (pkg.scripts) {
-      const buildScripts = libs.map(type => `${type}:build`);
-      if (buildScripts.length > 0) {
-        pkg.scripts.build = `run-p ${buildScripts.join(' ')}`;
-      }
-      else {
-        delete pkg.scripts.build;
-      }
-    }
-  });
+  if (libs.length) {
+    await updateBuildScripts(projectPath, libs);
+  }
+  else {
+    await removePackageScriptKeys(projectPath, ['build']);
+  }
   await removeWorkspacePackages(
     projectPath,
     Object.keys(featureFileMap)
@@ -91,7 +86,15 @@ async function removeWorkspacePackages(projectPath: string, packages: string[]) 
   await fs.writeFile(workspacePath, nextContent.endsWith('\n') ? nextContent : `${nextContent}\n`);
 }
 
-/** 修改package.json中的配置 */
+/** 同步 tooling 的 build 脚本 */
+async function updateBuildScripts(projectPath: string, libs: string[]) {
+  const buildScripts = libs.map(type => `${type}:build`);
+  return editPackage(`${projectPath}/tooling`, (pkg) => {
+    pkg.scripts = pkg.scripts || {};
+    pkg.scripts.build = `run-p ${buildScripts.join(' ')}`;
+  });
+}
+
 function changePackageName(filePath: string, config: Record<string, any>) {
   return editPackage(filePath, (pkg) => {
     Object.keys(config).forEach((key) => {
