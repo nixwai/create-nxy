@@ -1,7 +1,14 @@
-import { libFileMap } from '../config';
+import fs from 'fs-extra';
+import { featureFileMap, featureScriptMap, libFileMap } from '../config';
 import { editPackage } from '../tasks';
 
-export async function updatePackages(projectPath: string, name: string, libs: string[], format: number) {
+export async function updatePackages(
+  projectPath: string,
+  name: string,
+  libs: string[],
+  format: number,
+  features: string[] = [],
+) {
   // 更新包名
   await changePackageName(projectPath, { name: `@${name}/monorepo` });
   await changePackageName(`${projectPath}/tooling`, { name: `@${name}/tooling` });
@@ -24,12 +31,53 @@ export async function updatePackages(projectPath: string, name: string, libs: st
       await removePackageScripts(`${projectPath}/tooling`, type);
     }
   }
+  for (const type in featureScriptMap) {
+    if (!features.includes(type)) {
+      await removePackageScripts(projectPath, featureScriptMap[type]);
+    }
+  }
   // 修改打包全部的脚本命令
   await editPackage(projectPath, (pkg) => {
     if (pkg.scripts) {
-      pkg.scripts.build = `run-p ${libs.map(type => `${type}:build`).join(' ')}`;
+      const buildScripts = libs.map(type => `${type}:build`);
+      if (buildScripts.length > 0) {
+        pkg.scripts.build = `run-p ${buildScripts.join(' ')}`;
+      }
+      else {
+        delete pkg.scripts.build;
+      }
     }
   });
+  await removeWorkspacePackages(
+    projectPath,
+    Object.keys(featureFileMap)
+      .filter(type => !features.includes(type))
+      .map(type => featureFileMap[type]),
+  );
+}
+
+/** 移除工作空间包 */
+async function removeWorkspacePackages(projectPath: string, packages: string[]) {
+  if (packages.length === 0) {
+    return;
+  }
+
+  const workspacePath = `${projectPath}/pnpm-workspace.yaml`;
+  if (!await fs.pathExists(workspacePath)) {
+    return;
+  }
+
+  const packageSet = new Set(packages);
+  const content = await fs.readFile(workspacePath, 'utf8');
+  const nextContent = content
+    .split(/\r?\n/)
+    .filter((line: string) => {
+      const match = line.match(/^\s*-\s+(.+)\s*/);
+      return !match || !packageSet.has(match[1]);
+    })
+    .join('\n');
+
+  await fs.writeFile(workspacePath, nextContent.endsWith('\n') ? nextContent : `${nextContent}\n`);
 }
 
 /** 修改package.json中的配置 */

@@ -14,12 +14,14 @@ async function createProject() {
   if (!answers.name || typeof answers.clone !== 'number' || typeof answers.format !== 'number') {
     return;
   }
+  const libs = Array.isArray(answers.libs) ? answers.libs : [];
+  const features = Array.isArray(answers.features) ? answers.features : [];
 
   const downSpinner = ora('正在构建...').start();
   try {
     await gitClone(cloneList[answers.clone], answers.name);
-    await filterFiles(answers.name, answers.libs);
-    await updatePackages(answers.name, answers.name, answers.libs, answers.format);
+    await filterFiles(answers.name, libs, features);
+    await updatePackages(answers.name, answers.name, libs, answers.format, features);
     downSpinner.succeed(chalk.green('构建成功！'));
   }
   catch (err) {

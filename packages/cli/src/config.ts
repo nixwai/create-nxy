@@ -36,6 +36,15 @@ export const promptsOptions: PromptObject[] = [
       { title: 'Vue图标库', value: 'icon' },
     ],
   },
+  {
+    type: 'multiselect',
+    name: 'features',
+    message: '附加功能',
+    choices: [
+      { title: '文档 docs', value: 'docs', selected: true },
+      { title: '演练场 playground', value: 'playground', selected: true },
+    ],
+  },
 ];
 
 export const cloneList = [
@@ -49,4 +58,14 @@ export const libFileMap: Record<string, string> = {
   use: 'hooks',
   tool: 'utils',
   icon: 'icons',
+};
+
+export const featureFileMap: Record<string, string> = {
+  docs: 'docs',
+  playground: 'playground',
+};
+
+export const featureScriptMap: Record<string, string> = {
+  docs: 'docs',
+  playground: 'play',
 };
