@@ -8,7 +8,7 @@ packages:
   - tooling
   - tooling/*
   - packages/*
-  - packages/*/**
+  - packages/*/*
   - playground
   - docs
 
