@@ -25,8 +25,6 @@ export async function generateTooling(options: GenerateToolingOptions) {
   const targetPath = resolve(options.targetPath);
   const defaultDirName = getLibDirName(options.lib);
   await assertTargetPath(targetPath, options.hasTooling, defaultDirName);
-  assertPathSegment('pkg 根目录名称', options.pkgDirName);
-  assertPathSegment('打包目标库文件夹名称', options.targetDirName);
 
   const tempRoot = await fs.mkdtemp(join(tmpdir(), 'create-nxy-'));
   const templatePath = resolve(tempRoot, 'template');
@@ -79,14 +77,6 @@ function getLibDirName(lib: string) {
   return defaultDirName;
 }
 
-/** 目录名只允许单级路径，避免写出目标项目范围 */
-function assertPathSegment(label: string, value: string) {
-  const name = value.trim();
-  if (!name || name === '.' || name === '..' || /[<>:"|?*\\/']/.test(name)) {
-    throw new Error(`${label}必须是有效的单级目录名称`);
-  }
-}
-
 /** 优先使用目标项目 package.json 的 name，缺失时回退到目录名 */
 async function getProjectName(targetPath: string) {
   const packagePath = resolve(targetPath, 'package.json');
@@ -125,16 +115,12 @@ async function updateToolingPaths(
       replace: `createModulePaths('${targetDirName}')`,
     },
   ]);
-  await replaceInFile(resolve(toolingPath, `${defaultDirName}/tsdown.config.ts`), [
-    {
-      search: `'packages/${defaultDirName}'`,
-      replace: `'${pkgDirName}/${targetDirName}'`,
-    },
-  ]);
+  const pkgDirPath = pkgDirName === '.' ? '' : `${pkgDirName}/`;
+  const targetDirPath = targetDirName === '.' ? '' : `${targetDirName}/`;
   await replaceInFile(resolve(toolingPath, `${defaultDirName}/index.ts`), [
     {
       search: `../../packages/${defaultDirName}/package.json`,
-      replace: `../../${pkgDirName}/${targetDirName}/package.json`,
+      replace: `../../${pkgDirPath}${targetDirPath}package.json`,
     },
   ]);
 }

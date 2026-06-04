@@ -1,11 +1,6 @@
-import { dirname, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
 import { defineConfig } from 'tsdown';
-
-const buildPresetsRoot = dirname(fileURLToPath(import.meta.url));
-const projRoot = resolve(buildPresetsRoot, '../..');
-const presetRoot = resolve(projRoot, 'packages/presets');
-const presetOutput = resolve(presetRoot, 'dist');
+import { presetOutput, presetRoot, projRoot } from './paths.ts';
 
 const sharedConfig = {
   cwd: presetRoot,

@@ -1,12 +1,7 @@
-import { dirname, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
 import { defineConfig } from 'tsdown';
 import Vue from 'unplugin-vue/rolldown';
-
-const buildIconsRoot = dirname(fileURLToPath(import.meta.url));
-const projRoot = resolve(buildIconsRoot, '../..');
-const iconRoot = resolve(projRoot, 'packages/icons');
-const iconOutput = resolve(iconRoot, 'dist');
+import { iconOutput, iconRoot, projRoot } from './paths.ts';
 
 const sharedConfig = {
   cwd: iconRoot,

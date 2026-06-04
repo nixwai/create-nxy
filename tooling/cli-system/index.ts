@@ -9,7 +9,7 @@ export const release = series(
 
 export const build = series(
   () => delPath(cliOutput),
-  () => run('tsdown --config tsdown.config.ts', __dirname),
+  () => run('tsdown --config tsdown.config.ts'),
 );
 
 export const publish = series(

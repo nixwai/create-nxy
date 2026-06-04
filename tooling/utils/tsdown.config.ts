@@ -1,11 +1,6 @@
-import { dirname, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
 import { defineConfig } from 'tsdown';
-
-const buildUtilsRoot = dirname(fileURLToPath(import.meta.url));
-const projRoot = resolve(buildUtilsRoot, '../..');
-const toolRoot = resolve(projRoot, 'packages/utils');
-const toolOutput = resolve(toolRoot, 'dist');
+import { projRoot, toolOutput, toolRoot } from './paths.ts';
 
 const sharedConfig = {
   cwd: toolRoot,

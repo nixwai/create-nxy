@@ -1,13 +1,8 @@
-import { dirname, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
 import { defineConfig } from 'tsdown';
 import Vue from 'unplugin-vue/rolldown';
+import { designOutput, designRoot, projRoot } from './paths.ts';
 import { styleInjectPlugin } from './style-inject-plugin.ts';
-
-const buildComponentsRoot = dirname(fileURLToPath(import.meta.url));
-const projRoot = resolve(buildComponentsRoot, '../..');
-const designRoot = resolve(projRoot, 'packages/components');
-const designOutput = resolve(designRoot, 'dist');
 
 const sharedConfig = {
   cwd: designRoot,

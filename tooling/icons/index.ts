@@ -15,7 +15,7 @@ export const release = series(
 export const build = series(
   () => generateIconComp(),
   () => delPath(iconOutput),
-  () => run('tsdown --config tsdown.config.ts', __dirname),
+  () => run('tsdown --config tsdown.config.ts'),
 );
 
 export const publish = series(

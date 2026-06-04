@@ -126,7 +126,7 @@ npm create nxy@latest
 - 目标项目路径必须存在，并且必须是目录。
 - 如果选择 `否，生成完整 tooling`，目标项目不能已经存在 `tooling` 目录，避免覆盖。
 - 如果选择 `是，追加打包库`，目标项目必须已有 `tooling` 目录，且不能已经存在同类型打包库工具目录。
-- `pkg 根目录名称` 和 `打包目标库文件夹名称` 只支持单级目录名，例如 `packages`、`libs`、`components`，不支持 `packages/ui` 这样的多级路径。
+- `pkg 根目录名称` 和 `打包目标库文件夹名称` 只支持单级目录名，例如 `packages`、`libs`、`components`、`.`，不支持 `packages/ui` 这样的多级路径。
 - 生成的打包入口会沿用模板默认值，例如 `entry: { index: 'src/index.ts' }`。如果目标库的实际入口不是 `src/index.ts`，需要在生成后手动修改对应的 `tooling/<type>/tsdown.config.ts`。
 - 仅生成 `tooling` 模式只会处理 `tooling` 目录和 `tooling/package.json`，不会自动改目标项目根 `package.json` 或 `pnpm-workspace.yaml`。如需从根目录执行脚本，需要在目标项目中自行补充 workspace 和根脚本，或直接运行 `pnpm run -C tooling <type>:build`。
 

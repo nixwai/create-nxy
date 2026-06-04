@@ -1,1 +1,1 @@
-export const REGISTRY = 'https://registry.npmjs.org/';
+export const REGISTRY = 'https://registry.npmjs.org/ --access public';

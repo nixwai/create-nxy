@@ -1,5 +1,7 @@
 import { resolve } from 'node:path';
-import { createModulePaths } from '../common/paths';
+import { createModulePaths, projRoot } from '../common/paths.ts';
+
+export { projRoot };
 
 export const [iconRoot, iconOutput] = createModulePaths('icons');
 

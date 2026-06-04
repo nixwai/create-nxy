@@ -37,7 +37,7 @@ function validatePathSegment(value: string) {
   if (!name) {
     return '请输入目录名称';
   }
-  if (name === '.' || name === '..' || /[<>:"|?*\\/']/.test(name)) {
+  if (name === '..' || /[<>:"|?*\\/']/.test(name)) {
     return '请输入有效的单级目录名称';
   }
   return true;

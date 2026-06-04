@@ -1,11 +1,5 @@
-import { dirname, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'tsdown';
-
-const buildCliRoot = dirname(fileURLToPath(import.meta.url));
-const projRoot = resolve(buildCliRoot, '../..');
-const cliRoot = resolve(projRoot, 'packages/cli');
-const cliOutput = resolve(cliRoot, 'dist');
+import { cliOutput, cliRoot } from './paths.ts';
 
 export default defineConfig({
   cwd: cliRoot,
