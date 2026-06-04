@@ -1,10 +1,79 @@
 import type { PromptObject } from 'prompts';
 
+export const cssPreset = 'css';
+export const projectMode = 'project';
+export const toolingMode = 'tooling';
+
+export const libFileMap: Record<string, string> = {
+  design: 'components',
+  preset: 'presets',
+  use: 'hooks',
+  tool: 'utils',
+  icon: 'icons',
+};
+
+export const libChoices = [
+  { title: 'Vue 组件库', value: 'design' },
+  { title: 'Unocss 预设', value: 'preset' },
+  { title: '工具库', value: 'tool' },
+  { title: 'Vue 组合式工具库', value: 'use' },
+  { title: 'Vue 图标库', value: 'icon' },
+];
+
+function isProjectMode(_prev: any, values: Record<string, any>) {
+  return values.mode === projectMode;
+}
+
+function isToolingMode(_prev: any, values: Record<string, any>) {
+  return values.mode === toolingMode;
+}
+
+function validateRequired(value: string) {
+  return value.trim().length > 0 || '请输入内容';
+}
+
+function validatePathSegment(value: string) {
+  const name = value.trim();
+  if (!name) {
+    return '请输入目录名称';
+  }
+  if (name === '.' || name === '..' || /[<>:"|?*\\/']/.test(name)) {
+    return '请输入有效的单级目录名称';
+  }
+  return true;
+}
+
 export const promptsOptions: PromptObject[] = [
   {
-    type: 'text',
+    type: 'select',
+    name: 'mode',
+    message: '构建模式',
+    choices: [
+      { title: '创建完整项目', value: projectMode },
+      { title: '仅生成 tooling', value: toolingMode },
+    ],
+  },
+  {
+    type: (prev, values) => isProjectMode(prev, values) ? 'text' : null,
     name: 'name',
     message: '项目名',
+    validate: validateRequired,
+  },
+  {
+    type: (prev, values) => isToolingMode(prev, values) ? 'text' : null,
+    name: 'targetPath',
+    message: '目标项目路径',
+    initial: '.',
+    validate: validateRequired,
+  },
+  {
+    type: (prev, values) => isToolingMode(prev, values) ? 'select' : null,
+    name: 'hasTooling',
+    message: '目标项目是否已有 tooling 文件夹',
+    choices: [
+      { title: '否，生成完整 tooling', value: false },
+      { title: '是，追加打包库', value: true },
+    ],
   },
   {
     type: 'select',
@@ -16,7 +85,7 @@ export const promptsOptions: PromptObject[] = [
     ],
   },
   {
-    type: 'select',
+    type: (prev, values) => isProjectMode(prev, values) ? 'select' : null,
     name: 'format',
     message: '库名格式',
     choices: [
@@ -25,16 +94,40 @@ export const promptsOptions: PromptObject[] = [
     ],
   },
   {
-    type: 'multiselect',
+    type: (prev, values) => isProjectMode(prev, values) ? 'multiselect' : null,
     name: 'libs',
     message: '库类型',
+    choices: libChoices,
+  },
+  {
+    type: (prev, values) => isProjectMode(prev, values) ? 'multiselect' : null,
+    name: 'features',
+    message: '附加功能',
     choices: [
-      { title: 'Vue组件库', value: 'design' },
-      { title: 'Unocss预设', value: 'preset' },
-      { title: '工具库', value: 'tool' },
-      { title: 'Vue组合式工具库', value: 'use' },
-      { title: 'Vue图标库', value: 'icon' },
+      { title: 'CSS 样式预设', value: cssPreset },
+      { title: '文档 docs', value: 'docs', selected: true },
+      { title: '演练场 playground', value: 'playground', selected: true },
     ],
+  },
+  {
+    type: (prev, values) => isToolingMode(prev, values) ? 'select' : null,
+    name: 'toolingLib',
+    message: '打包库',
+    choices: libChoices,
+  },
+  {
+    type: (prev, values) => isToolingMode(prev, values) ? 'text' : null,
+    name: 'pkgDirName',
+    message: 'pkg 根目录名称',
+    initial: 'packages',
+    validate: validatePathSegment,
+  },
+  {
+    type: (prev, values) => isToolingMode(prev, values) ? 'text' : null,
+    name: 'targetDirName',
+    message: '打包目标库文件夹名称',
+    initial: (_prev, values) => libFileMap[values.toolingLib],
+    validate: validatePathSegment,
   },
 ];
 
@@ -43,10 +136,35 @@ export const cloneList = [
   'git@github.com:nixwai/create-nxy.git',
 ];
 
-export const libFileMap: Record<string, string> = {
-  design: 'components',
-  preset: 'presets',
-  use: 'hooks',
-  tool: 'utils',
-  icon: 'icons',
+export const featureFileMap: Record<string, string> = {
+  docs: 'docs',
+  playground: 'playground',
 };
+
+export const featureScriptMap: Record<string, string> = {
+  docs: 'docs',
+  playground: 'play',
+};
+
+export const cssConfigFiles = [
+  'stylelint.config.cjs',
+  '.stylelintignore',
+];
+
+export const cssPackageScripts = [
+  'lint:style',
+];
+
+export const cssPackageDependencies = [
+  'postcss',
+  'postcss-html',
+  'postcss-scss',
+  'sass',
+  'stylelint',
+  'stylelint-config-recess-order',
+  'stylelint-config-recommended-scss',
+  'stylelint-config-recommended-vue',
+  'stylelint-config-standard',
+  'stylelint-order',
+  'stylelint-scss',
+];

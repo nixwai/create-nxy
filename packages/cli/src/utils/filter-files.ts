@@ -1,8 +1,8 @@
 import fs from 'fs-extra';
 import { sync } from 'glob';
-import { libFileMap } from '../config';
+import { cssConfigFiles, cssPreset, featureFileMap, libFileMap } from '../config';
 
-export async function filterFiles(projectPath: string, libs: string[] = []) {
+export async function filterFiles(projectPath: string, libs: string[] = [], features: string[] = []) {
   const deletePaths = [
     `${projectPath}/.git`,
     `${projectPath}/pnpm-lock.yaml`,
@@ -16,6 +16,14 @@ export async function filterFiles(projectPath: string, libs: string[] = []) {
         `${projectPath}/tooling/${libFileMap[type]}`,
       );
     }
+  }
+  for (const type in featureFileMap) {
+    if (!features.includes(type)) {
+      deletePaths.push(`${projectPath}/${featureFileMap[type]}`);
+    }
+  }
+  if (!features.includes(cssPreset)) {
+    deletePaths.push(...cssConfigFiles.map(file => `${projectPath}/${file}`));
   }
   await Promise.all(deletePaths.map(deleteFiles));
 }

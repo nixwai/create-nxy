@@ -14,13 +14,10 @@ importers:
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^9.0.0
-        version: 9.0.0(@typescript-eslint/rule-tester@8.60.1(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3))(@typescript-eslint/typescript-estree@8.60.1(typescript@6.0.3))(@typescript-eslint/utils@8.60.1(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3))(@unocss/eslint-plugin@66.7.0(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3))(@vue/compiler-sfc@3.5.35)(eslint-plugin-format@2.0.1(eslint@10.4.1(jiti@2.7.0)))(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3)(vitest@4.1.8)
+        version: 9.0.0(@typescript-eslint/rule-tester@8.60.1(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3))(@typescript-eslint/typescript-estree@8.60.1(typescript@6.0.3))(@typescript-eslint/utils@8.60.1(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3))(@vue/compiler-sfc@3.5.35)(eslint-plugin-format@2.0.1(eslint@10.4.1(jiti@2.7.0)))(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3)(vitest@4.1.8)
       '@types/node':
         specifier: ^25.9.1
         version: 25.9.1
-      '@unocss/eslint-plugin':
-        specifier: ^66.7.0
-        version: 66.7.0(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3)
       '@vitest/coverage-v8':
         specifier: ^4.1.8
         version: 4.1.8(vitest@4.1.8)
@@ -74,13 +71,10 @@ importers:
         version: 8.1.1(stylelint@17.12.0(typescript@6.0.3))
       stylelint-scss:
         specifier: ^7.1.1
-        version: 7.1.1(stylelint@17.12.0(typescript@6.0.3))
+        version: 7.2.0(stylelint@17.12.0(typescript@6.0.3))
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
-      unocss:
-        specifier: ^66.7.0
-        version: 66.7.0(vite@8.0.16(@types/node@25.9.1)(jiti@2.7.0)(sass@1.100.0)(yaml@2.9.0))
       vitest:
         specifier: ^4.1.8
         version: 4.1.8(@types/node@25.9.1)(@vitest/coverage-v8@4.1.8)(happy-dom@20.9.0)(vite@8.0.16(@types/node@25.9.1)(jiti@2.7.0)(sass@1.100.0)(yaml@2.9.0))
@@ -90,6 +84,9 @@ importers:
       postcss:
         specifier: ^8.5.15
         version: 8.5.15
+      unocss:
+        specifier: ^66.7.0
+        version: 66.7.0(vite@8.0.16(@types/node@25.9.1)(jiti@2.7.0)(sass@1.100.0)(yaml@2.9.0))
       vitepress:
         specifier: ^1.6.4
         version: 1.6.4(@algolia/client-search@5.53.0)(@types/node@25.9.1)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.15)(sass@1.100.0)(search-insights@2.17.3)(typescript@6.0.3)
@@ -1713,9 +1710,6 @@ packages:
   '@unocss/core@66.7.0':
     resolution: {integrity: sha512-j6MFMx5C3iIwW4T4hVbh+30fKWgSGkmS3bCcdjlfqM88lRT+dHFBN9nkfNOBJT6e6IHN9415nexuzcQvTjJXxw==}
 
-  '@unocss/eslint-plugin@66.7.0':
-    resolution: {integrity: sha512-xnuO3kS+OrnawcL/g/WImK32cLGsJzxLgTJ7bBcNYkCpcpv/pp79L7P7yP36idx+lLMOogiMvLftOu1D7c1cNg==}
-
   '@unocss/extractor-arbitrary-variants@66.7.0':
     resolution: {integrity: sha512-iHMlXmb8aGtYgPQ8o3D4rMz9DKOqSp8g/LWvEoiM7arSjJF9jMpcpYlqZXzkg1mSQX23TRW76Qxj1gyI4lRd9w==}
 
@@ -2504,8 +2498,8 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
-  electron-to-chromium@1.5.365:
-    resolution: {integrity: sha512-xfip4u1QF1s+URFqpA6N+OeFpDGpN7VJz1f3MO3bVL0QYBjpGiZ5/Of7kugvM+o8TTqmanUlviHN3c8M9vYWCw==}
+  electron-to-chromium@1.5.366:
+    resolution: {integrity: sha512-OlRuhb688YTCzzU3gXPLn6nGyd+F+53INE1qaKKlu6kETErE8FYsyDh0XqXEU+uBRn0MpCzz2vfNwORhkap8qg==}
 
   emoji-regex-xs@1.0.0:
     resolution: {integrity: sha512-LRlerrMYoIDrT6jgpeZ2YYl/L8EulRTt5hQcYjy5AInh7HWXKimpqx68aknBFpGL2+/IcogTcaydJEgaTmOpDg==}
@@ -4657,8 +4651,8 @@ packages:
     peerDependencies:
       stylelint: ^16.18.0 || ^17.0.0
 
-  stylelint-scss@7.1.1:
-    resolution: {integrity: sha512-pLPXJZ7RtAFNLXe8gqarf3B56ScVTd1vPiL9IFgcJkIZsYPzAgLJPh2h9NHrp3BFeKrtAkIgwQ08QSmhvlv1gA==}
+  stylelint-scss@7.2.0:
+    resolution: {integrity: sha512-6E79Bachv0Iz0gqRUZgdqdXCsiq26DWBWIBNHYtjTmAp3wJu6cp/I37VfW7BPntmh2puF3bY09XWl4HZGrLhzw==}
     engines: {node: '>=20.19.0'}
     peerDependencies:
       stylelint: ^16.8.2 || ^17.0.0
@@ -5380,7 +5374,7 @@ snapshots:
     dependencies:
       '@algolia/client-common': 5.53.0
 
-  '@antfu/eslint-config@9.0.0(@typescript-eslint/rule-tester@8.60.1(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3))(@typescript-eslint/typescript-estree@8.60.1(typescript@6.0.3))(@typescript-eslint/utils@8.60.1(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3))(@unocss/eslint-plugin@66.7.0(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3))(@vue/compiler-sfc@3.5.35)(eslint-plugin-format@2.0.1(eslint@10.4.1(jiti@2.7.0)))(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3)(vitest@4.1.8)':
+  '@antfu/eslint-config@9.0.0(@typescript-eslint/rule-tester@8.60.1(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3))(@typescript-eslint/typescript-estree@8.60.1(typescript@6.0.3))(@typescript-eslint/utils@8.60.1(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3))(@vue/compiler-sfc@3.5.35)(eslint-plugin-format@2.0.1(eslint@10.4.1(jiti@2.7.0)))(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3)(vitest@4.1.8)':
     dependencies:
       '@antfu/install-pkg': 1.1.0
       '@clack/prompts': 1.5.0
@@ -5420,7 +5414,6 @@ snapshots:
       vue-eslint-parser: 10.4.1(eslint@10.4.1(jiti@2.7.0))
       yaml-eslint-parser: 2.0.0
     optionalDependencies:
-      '@unocss/eslint-plugin': 66.7.0(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3)
       eslint-plugin-format: 2.0.1(eslint@10.4.1(jiti@2.7.0))
     transitivePeerDependencies:
       - '@eslint/json'
@@ -6478,19 +6471,6 @@ snapshots:
 
   '@unocss/core@66.7.0': {}
 
-  '@unocss/eslint-plugin@66.7.0(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3)':
-    dependencies:
-      '@typescript-eslint/utils': 8.60.1(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3)
-      '@unocss/config': 66.7.0
-      '@unocss/core': 66.7.0
-      '@unocss/rule-utils': 66.7.0
-      magic-string: 0.30.21
-      synckit: 0.11.13
-    transitivePeerDependencies:
-      - eslint
-      - supports-color
-      - typescript
-
   '@unocss/extractor-arbitrary-variants@66.7.0':
     dependencies:
       '@unocss/core': 66.7.0
@@ -7007,7 +6987,7 @@ snapshots:
     dependencies:
       baseline-browser-mapping: 2.10.33
       caniuse-lite: 1.0.30001793
-      electron-to-chromium: 1.5.365
+      electron-to-chromium: 1.5.366
       node-releases: 2.0.47
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
 
@@ -7338,7 +7318,7 @@ snapshots:
       minimatch: 9.0.9
       semver: 7.8.1
 
-  electron-to-chromium@1.5.365: {}
+  electron-to-chromium@1.5.366: {}
 
   emoji-regex-xs@1.0.0: {}
 
@@ -9893,7 +9873,7 @@ snapshots:
       postcss-scss: 4.0.9(postcss@8.5.15)
       stylelint: 17.12.0(typescript@6.0.3)
       stylelint-config-recommended: 18.0.0(stylelint@17.12.0(typescript@6.0.3))
-      stylelint-scss: 7.1.1(stylelint@17.12.0(typescript@6.0.3))
+      stylelint-scss: 7.2.0(stylelint@17.12.0(typescript@6.0.3))
     optionalDependencies:
       postcss: 8.5.15
 
@@ -9920,7 +9900,7 @@ snapshots:
       postcss-sorting: 10.0.0(postcss@8.5.15)
       stylelint: 17.12.0(typescript@6.0.3)
 
-  stylelint-scss@7.1.1(stylelint@17.12.0(typescript@6.0.3)):
+  stylelint-scss@7.2.0(stylelint@17.12.0(typescript@6.0.3)):
     dependencies:
       '@csstools/css-calc': 3.2.1(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)
       '@csstools/css-parser-algorithms': 4.0.0(@csstools/css-tokenizer@4.0.0)
