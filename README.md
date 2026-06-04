@@ -132,14 +132,13 @@ npm create nxy@latest
 
 ## 支持的库类型
 
-| CLI 选项 | 值 | 包目录 | tooling 目录 | 作用 | 生成包名示例 |
-| --- | --- | --- | --- | --- | --- |
-| Vue 组件库 | `design` | `packages/components` | `tooling/components` | Vue 3 组件库模板，支持 `.vue`、样式注入和类型声明 | `@my-libs/design` / `my-libs-design` |
-| UnoCSS 预设 | `preset` | `packages/presets` | `tooling/presets` | UnoCSS preset 模板 | `@my-libs/preset` / `my-libs-preset` |
-| 工具库 | `tool` | `packages/utils` | `tooling/utils` | 通用 TypeScript 工具函数库 | `@my-libs/tool` / `my-libs-tool` |
-| Vue 组合式工具库 | `use` | `packages/hooks` | `tooling/hooks` | 基于 `vue-demi` 的组合式函数库 | `@my-libs/use` / `my-libs-use` |
-| Vue 图标库 | `icon` | `packages/icons` | `tooling/icons` | SVG 转 Vue 组件并打包 | `@my-libs/icons-vue` / `my-libs-icons-vue` |
-
+| CLI 选项 | 值 | 包目录 | tooling 目录 | 作用 |
+| --- | --- | --- | --- | --- |
+| Vue 组件库 | `design` | `packages/components` | `tooling/components` | Vue 3 组件库模板，支持 `.vue`、样式注入和类型声明 |
+| UnoCSS 预设 | `preset` | `packages/presets` | `tooling/presets` | UnoCSS preset 模板 |
+| 工具库 | `tool` | `packages/utils` | `tooling/utils` | 通用 TypeScript 工具函数库 |
+| Vue 组合式工具库 | `use` | `packages/hooks` | `tooling/hooks` | 基于 `vue-demi` 的组合式函数库 |
+| Vue 图标库 | `icon` | `packages/icons` | `tooling/icons` | SVG 转 Vue 组件并打包 |
 ## 附加功能
 
 | 功能 | 说明 | 相关脚本 |

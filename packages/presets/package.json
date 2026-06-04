@@ -13,10 +13,6 @@
     ".": {
       "types": "./dist/types/index.d.ts",
       "import": "./dist/index.js"
-    },
-    "./helper": {
-      "types": "./dist/types/helper.d.ts",
-      "import": "./dist/helper.js"
     }
   },
   "main": "dist/index.js",
@@ -25,6 +21,9 @@
   "files": [
     "dist"
   ],
+  "peerDependencies": {
+    "unocss": "^66.7.0"
+  },
   "dependencies": {
     "@unocss/preset-mini": "^66.7.0"
   },

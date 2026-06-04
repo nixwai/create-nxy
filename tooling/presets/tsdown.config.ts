@@ -11,11 +11,11 @@ const sharedConfig = {
   cwd: presetRoot,
   entry: {
     index: 'src/index.ts',
-  // helper: 'src/helper.ts', // 有需要时可以添加
+    // helper: 'src/helper.ts', // 有需要时可以添加
   },
   clean: false,
   platform: 'neutral' as const,
-  deps: { neverBundle: ['unocss', '@unocss/preset-mini'] },
+  deps: { neverBundle: ['unocss', /@unocss\/.*/] },
   outputOptions: { exports: 'named' as const },
 };
 

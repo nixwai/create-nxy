@@ -14,7 +14,7 @@ const sharedConfig = {
   sourcemap: true,
   clean: false,
   platform: 'neutral' as const,
-  deps: { neverBundle: ['vue-demi'] },
+  deps: { neverBundle: ['vue', /@vueuse\/.*/, 'vue-demi'] },
   outputOptions: { exports: 'named' as const },
 };
 
