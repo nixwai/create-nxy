@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "postcss": "^8.5.15",
-    "unocss": "^66.7.0",
+    "unocss": "^66.7.2",
     "vitepress": "^1.6.4",
     "vitepress-demo-plugin": "^1.5.1"
   }

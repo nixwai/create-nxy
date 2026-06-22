@@ -9,7 +9,11 @@
     "type": "git",
     "url": "https://github.com/nixwai/create-nxy"
   },
-  "keywords": ["icon", "svg", "vue"],
+  "keywords": [
+    "icon",
+    "svg",
+    "vue"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/types/index.d.ts",
@@ -20,6 +24,6 @@
     "vue": "^3.3.0"
   },
   "devDependencies": {
-    "vue": "^3.5.35"
+    "vue": "^3.5.38"
   }
 }
