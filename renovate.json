@@ -9,7 +9,7 @@
   "timezone": "Asia/Shanghai",
   "automerge": true,
   "automergeType": "pr",
-  "platformAutomerge": false,
+  "platformAutomerge": true,
   "ignoreTests": false,
   "pruneStaleBranches": true,
   "packageRules": [
