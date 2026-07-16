@@ -17,7 +17,7 @@
     "global.d.ts"
   ],
   "peerDependencies": {
-    "vue": "^3.5.0"
+    "vue": "^3.5.39"
   },
   "dependencies": {
     "@vueuse/core": "^14.3.0"
@@ -25,6 +25,6 @@
   "devDependencies": {
     "@vue/test-utils": "^2.4.11",
     "@vue/tsconfig": "^0.9.1",
-    "vue": "^3.5.38"
+    "vue": "^3.5.39"
   }
 }
