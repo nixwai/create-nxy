@@ -33,7 +33,8 @@
     "cli:release": "pnpm run -C tooling cli:release",
     "cli:build": "pnpm run -C tooling cli:build",
     "cli:publish": "pnpm run -C tooling cli:publish",
-    "lint:style": "stylelint \"./**/*.{css,less,vue,html}\" --fix",
+    "lint:style": "stylelint \"./**/*.{css,less,vue,html}\"",
+    "lint:style-fix": "stylelint \"./**/*.{css,less,vue,html}\" --fix",
     "prepare": "husky",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"

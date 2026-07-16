@@ -43,6 +43,9 @@ jobs:
       - name: Lint
         run: pnpm lint
 
+      - name: StyleLint
+        run: pnpm lint:style
+
       - name: Test
         run: pnpm exec vitest run
 

@@ -153,6 +153,7 @@ export const cssConfigFiles = [
 
 export const cssPackageScripts = [
   'lint:style',
+  'lint:style-fix',
 ];
 
 export const cssPackageDependencies = [
