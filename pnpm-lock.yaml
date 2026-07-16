@@ -222,9 +222,6 @@ importers:
       tsdown:
         specifier: ^0.22.3
         version: 0.22.3(@tsdown/css@0.22.3)(typescript@6.0.3)(vue-tsc@3.3.5(typescript@6.0.3))
-      typescript:
-        specifier: ^6.0.3
-        version: 6.0.3
 
   tooling/cli-system: {}
 
@@ -6615,8 +6612,8 @@ snapshots:
 
   '@typescript-eslint/project-service@8.60.1(typescript@6.0.3)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.60.1(typescript@6.0.3)
-      '@typescript-eslint/types': 8.60.1
+      '@typescript-eslint/tsconfig-utils': 8.61.1(typescript@6.0.3)
+      '@typescript-eslint/types': 8.61.1
       debug: 4.4.3
       typescript: 6.0.3
     transitivePeerDependencies:

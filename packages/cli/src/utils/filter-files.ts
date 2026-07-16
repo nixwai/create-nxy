@@ -5,6 +5,8 @@ import { cssConfigFiles, cssPreset, featureFileMap, libFileMap } from '../config
 export async function filterFiles(projectPath: string, libs: string[] = [], features: string[] = []) {
   const deletePaths = [
     `${projectPath}/.git`,
+    `${projectPath}/.github`,
+    `${projectPath}/renovate.json`,
     `${projectPath}/pnpm-lock.yaml`,
     `${projectPath}/packages/cli`,
     `${projectPath}/tooling/cli-system`,

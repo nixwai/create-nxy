@@ -1,0 +1,26 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":configMigration",
+    "security:minimumReleaseAgeNpm",
+    ":maintainLockFilesWeekly"
+  ],
+  "timezone": "Asia/Shanghai",
+  "automerge": true,
+  "automergeType": "pr",
+  "platformAutomerge": false,
+  "ignoreTests": false,
+  "pruneStaleBranches": true,
+  "packageRules": [
+    {
+      "groupName": "所有非重大依赖更新",
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ]
+    }
+  ]
+}
