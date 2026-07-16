@@ -1,7 +1,7 @@
 {
   "name": "@create-nxy/monorepo",
   "version": "1.0.0",
-  "packageManager": "pnpm@11.11.0",
+  "packageManager": "pnpm@11.13.1",
   "description": "",
   "author": "xy",
   "license": "MIT",
@@ -48,7 +48,7 @@
     "happy-dom": "^20.10.6",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.8",
-    "postcss": "^8.5.18",
+    "postcss": "^8.5.19",
     "postcss-html": "^1.8.1",
     "postcss-scss": "^4.0.9",
     "sass": "^1.101.0",
