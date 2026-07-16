@@ -7,6 +7,7 @@
     ":maintainLockFilesWeekly"
   ],
   "timezone": "Asia/Shanghai",
+  "rangeStrategy": "bump",
   "automerge": true,
   "automergeType": "pr",
   "platformAutomerge": true,
