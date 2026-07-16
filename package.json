@@ -1,7 +1,7 @@
 {
   "name": "@create-nxy/monorepo",
   "version": "1.0.0",
-  "packageManager": "pnpm@11.9.0",
+  "packageManager": "pnpm@11.11.0",
   "description": "",
   "author": "xy",
   "license": "MIT",
