@@ -15,7 +15,7 @@
   "pruneStaleBranches": true,
   "packageRules": [
     {
-      "groupName": "所有非重大依赖更新",
+      "groupName": "all non major",
       "groupSlug": "all-non-major",
       "matchUpdateTypes": [
         "minor",
