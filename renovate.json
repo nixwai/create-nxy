@@ -15,6 +15,7 @@
   "packageRules": [
     {
       "groupName": "所有非重大依赖更新",
+      "groupSlug": "all-non-major",
       "matchUpdateTypes": [
         "minor",
         "patch",
