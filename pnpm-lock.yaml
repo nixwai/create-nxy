@@ -220,7 +220,7 @@ importers:
         specifier: ^3.35.1
         version: 3.35.1
       tsdown:
-        specifier: ^0.22.8
+        specifier: ^0.22.9
         version: 0.22.9(@tsdown/css@0.22.9)(typescript@6.0.3)(vue-tsc@3.3.7(typescript@6.0.3))
 
   tooling/cli-system: {}
@@ -228,7 +228,7 @@ importers:
   tooling/components:
     devDependencies:
       '@tsdown/css':
-        specifier: ^0.22.8
+        specifier: ^0.22.9
         version: 0.22.9(jiti@2.7.0)(postcss@8.5.19)(sass@1.101.0)(tsdown@0.22.9)(yaml@2.9.0)
       unplugin-vue:
         specifier: ^7.2.0
