@@ -15,6 +15,6 @@
     "postcss": "^8.5.19",
     "unocss": "^66.7.5",
     "vitepress": "^1.6.4",
-    "vitepress-demo-plugin": "^1.6.0"
+    "vitepress-demo-plugin": "^1.7.0"
   }
 }
