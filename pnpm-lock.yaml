@@ -34,17 +34,17 @@ importers:
         specifier: ^9.1.7
         version: 9.1.7
       lint-staged:
-        specifier: ^17.1.0
-        version: 17.1.0
+        specifier: ^17.1.1
+        version: 17.2.0
       postcss:
-        specifier: ^8.5.21
-        version: 8.5.21
+        specifier: ^8.5.22
+        version: 8.5.22
       postcss-html:
         specifier: ^1.8.1
         version: 1.8.1
       postcss-scss:
         specifier: ^4.0.9
-        version: 4.0.9(postcss@8.5.21)
+        version: 4.0.9(postcss@8.5.22)
       sass:
         specifier: ^1.101.3
         version: 1.101.6
@@ -56,7 +56,7 @@ importers:
         version: 7.7.0(stylelint-order@8.1.1(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3)))(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3))
       stylelint-config-recommended-scss:
         specifier: ^17.0.1
-        version: 17.0.1(postcss@8.5.21)(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3))
+        version: 17.0.1(postcss@8.5.22)(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3))
       stylelint-config-recommended-vue:
         specifier: ^1.6.1
         version: 1.6.1(postcss-html@1.8.1)(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3))
@@ -79,17 +79,17 @@ importers:
   docs:
     devDependencies:
       postcss:
-        specifier: ^8.5.21
-        version: 8.5.21
+        specifier: ^8.5.22
+        version: 8.5.22
       unocss:
         specifier: ^66.7.5
         version: 66.7.5(vite@8.1.5(@types/node@26.1.1)(jiti@2.7.0)(sass@1.101.6)(yaml@2.9.0))
       vitepress:
         specifier: ^1.6.4
-        version: 1.6.4(@algolia/client-search@5.56.0)(@types/node@26.1.1)(change-case@5.4.4)(lightningcss@1.33.0)(postcss@8.5.21)(sass@1.101.6)(search-insights@2.17.3)(typescript@6.0.3)
+        version: 1.6.4(@algolia/client-search@5.56.0)(@types/node@26.1.1)(change-case@5.4.4)(lightningcss@1.33.0)(postcss@8.5.22)(sass@1.101.6)(search-insights@2.17.3)(typescript@6.0.3)
       vitepress-demo-plugin:
         specifier: ^1.7.0
-        version: 1.7.0(shiki@2.5.0)(vitepress@1.6.4(@algolia/client-search@5.56.0)(@types/node@26.1.1)(change-case@5.4.4)(lightningcss@1.33.0)(postcss@8.5.21)(sass@1.101.6)(search-insights@2.17.3)(typescript@6.0.3))(vue@3.5.40(typescript@6.0.3))
+        version: 1.7.0(shiki@2.5.0)(vitepress@1.6.4(@algolia/client-search@5.56.0)(@types/node@26.1.1)(change-case@5.4.4)(lightningcss@1.33.0)(postcss@8.5.22)(sass@1.101.6)(search-insights@2.17.3)(typescript@6.0.3))(vue@3.5.40(typescript@6.0.3))
 
   packages/cli:
     dependencies:
@@ -229,7 +229,7 @@ importers:
     devDependencies:
       '@tsdown/css':
         specifier: ^0.22.13
-        version: 0.22.13(jiti@2.7.0)(postcss@8.5.21)(sass@1.101.6)(tsdown@0.22.13)(yaml@2.9.0)
+        version: 0.22.13(jiti@2.7.0)(postcss@8.5.22)(sass@1.101.6)(tsdown@0.22.13)(yaml@2.9.0)
       unplugin-vue:
         specifier: ^7.2.0
         version: 7.2.0(@types/node@26.1.1)(jiti@2.7.0)(rolldown@1.2.0)(rollup@4.62.2)(sass@1.101.6)(vue@3.5.40(typescript@6.0.3))(yaml@2.9.0)
@@ -3558,8 +3558,8 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  lint-staged@17.1.0:
-    resolution: {integrity: sha512-d7UQRu/9ZPgfu4+hu/k0wny5GEaIxo+2jb2LJqQDkE7cHRTm1HGqNUDq5UOwsGPpjpaNAFmgAsYo3TR+i9cSJw==}
+  lint-staged@17.2.0:
+    resolution: {integrity: sha512-FchGnFe4i4B1C/a35SPU9bNGPEHSC1+1iV0plLjzBmKVe9klZrlRfSgK6Cw4VeHyqOXbJUXP0vON61uRftNQ0A==}
     engines: {node: '>=22.22.1'}
     hasBin: true
 
@@ -4097,6 +4097,10 @@ packages:
 
   postcss@8.5.21:
     resolution: {integrity: sha512-v4sDNP3fdNiWMfabO7OwOQdOX8TiQSztKyT1Wj0w+j7LDallJThJRBBBmzVGyYj0crMh7jlV4zepPkiNu9UwDQ==}
+    engines: {node: ^10 || ^12 || >=14}
+
+  postcss@8.5.22:
+    resolution: {integrity: sha512-KBDEIpLrvpv16pp3K0Fw+UCoZfopFjjgeB+0tA/aaThfEE74kKDLrgg603YvOWJyg3+WYtyq3xYsQWsIyZlPqQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   preact@10.29.7:
@@ -6130,14 +6134,14 @@ snapshots:
       estraverse: 5.3.0
       picomatch: 4.0.5
 
-  '@tsdown/css@0.22.13(jiti@2.7.0)(postcss@8.5.21)(sass@1.101.6)(tsdown@0.22.13)(yaml@2.9.0)':
+  '@tsdown/css@0.22.13(jiti@2.7.0)(postcss@8.5.22)(sass@1.101.6)(tsdown@0.22.13)(yaml@2.9.0)':
     dependencies:
       lightningcss: 1.33.0
-      postcss-load-config: 6.0.1(jiti@2.7.0)(postcss@8.5.21)(yaml@2.9.0)
+      postcss-load-config: 6.0.1(jiti@2.7.0)(postcss@8.5.22)(yaml@2.9.0)
       rolldown: 1.2.0
       tsdown: 0.22.13(@tsdown/css@0.22.13)(@volar/typescript@2.4.28)(typescript@6.0.3)(vue-tsc@3.3.7(typescript@6.0.3))
     optionalDependencies:
-      postcss: 8.5.21
+      postcss: 8.5.22
       sass: 1.101.6
     transitivePeerDependencies:
       - jiti
@@ -8189,7 +8193,7 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  lint-staged@17.1.0:
+  lint-staged@17.2.0:
     dependencies:
       picomatch: 4.0.5
       string-argv: 0.3.2
@@ -8912,45 +8916,51 @@ snapshots:
     dependencies:
       htmlparser2: 8.0.2
       js-tokens: 9.0.1
-      postcss: 8.5.21
-      postcss-safe-parser: 6.0.0(postcss@8.5.21)
+      postcss: 8.5.22
+      postcss-safe-parser: 6.0.0(postcss@8.5.22)
 
-  postcss-load-config@6.0.1(jiti@2.7.0)(postcss@8.5.21)(yaml@2.9.0):
+  postcss-load-config@6.0.1(jiti@2.7.0)(postcss@8.5.22)(yaml@2.9.0):
     dependencies:
       lilconfig: 3.1.3
     optionalDependencies:
       jiti: 2.7.0
-      postcss: 8.5.21
+      postcss: 8.5.22
       yaml: 2.9.0
 
   postcss-media-query-parser@0.2.3: {}
 
   postcss-resolve-nested-selector@0.1.6: {}
 
-  postcss-safe-parser@6.0.0(postcss@8.5.21):
+  postcss-safe-parser@6.0.0(postcss@8.5.22):
     dependencies:
-      postcss: 8.5.21
+      postcss: 8.5.22
 
-  postcss-safe-parser@7.0.1(postcss@8.5.21):
+  postcss-safe-parser@7.0.1(postcss@8.5.22):
     dependencies:
-      postcss: 8.5.21
+      postcss: 8.5.22
 
-  postcss-scss@4.0.9(postcss@8.5.21):
+  postcss-scss@4.0.9(postcss@8.5.22):
     dependencies:
-      postcss: 8.5.21
+      postcss: 8.5.22
 
   postcss-selector-parser@7.1.4:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
 
-  postcss-sorting@10.0.0(postcss@8.5.21):
+  postcss-sorting@10.0.0(postcss@8.5.22):
     dependencies:
-      postcss: 8.5.21
+      postcss: 8.5.22
 
   postcss-value-parser@4.2.0: {}
 
   postcss@8.5.21:
+    dependencies:
+      nanoid: 3.3.16
+      picocolors: 1.1.1
+      source-map-js: 1.2.1
+
+  postcss@8.5.22:
     dependencies:
       nanoid: 3.3.16
       picocolors: 1.1.1
@@ -9336,14 +9346,14 @@ snapshots:
       stylelint: 17.14.1(supports-color@10.2.2)(typescript@6.0.3)
       stylelint-order: 8.1.1(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3))
 
-  stylelint-config-recommended-scss@17.0.1(postcss@8.5.21)(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3)):
+  stylelint-config-recommended-scss@17.0.1(postcss@8.5.22)(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3)):
     dependencies:
-      postcss-scss: 4.0.9(postcss@8.5.21)
+      postcss-scss: 4.0.9(postcss@8.5.22)
       stylelint: 17.14.1(supports-color@10.2.2)(typescript@6.0.3)
       stylelint-config-recommended: 18.0.0(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3))
       stylelint-scss: 7.2.0(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3))
     optionalDependencies:
-      postcss: 8.5.21
+      postcss: 8.5.22
 
   stylelint-config-recommended-vue@1.6.1(postcss-html@1.8.1)(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3)):
     dependencies:
@@ -9364,8 +9374,8 @@ snapshots:
 
   stylelint-order@8.1.1(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3)):
     dependencies:
-      postcss: 8.5.21
-      postcss-sorting: 10.0.0(postcss@8.5.21)
+      postcss: 8.5.22
+      postcss-sorting: 10.0.0(postcss@8.5.22)
       stylelint: 17.14.1(supports-color@10.2.2)(typescript@6.0.3)
 
   stylelint-scss@7.2.0(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3)):
@@ -9411,8 +9421,8 @@ snapshots:
       micromatch: 4.0.8
       normalize-path: 3.0.0
       picocolors: 1.1.1
-      postcss: 8.5.21
-      postcss-safe-parser: 7.0.1(postcss@8.5.21)
+      postcss: 8.5.22
+      postcss-safe-parser: 7.0.1(postcss@8.5.22)
       postcss-selector-parser: 7.1.4
       postcss-value-parser: 4.2.0
       string-width: 8.2.2
@@ -9577,7 +9587,7 @@ snapshots:
       unconfig-core: 7.5.0
       verkit: 0.1.2
     optionalDependencies:
-      '@tsdown/css': 0.22.13(jiti@2.7.0)(postcss@8.5.21)(sass@1.101.6)(tsdown@0.22.13)(yaml@2.9.0)
+      '@tsdown/css': 0.22.13(jiti@2.7.0)(postcss@8.5.22)(sass@1.101.6)(tsdown@0.22.13)(yaml@2.9.0)
       typescript: 6.0.3
     transitivePeerDependencies:
       - '@typescript/native-preview'
@@ -9813,7 +9823,7 @@ snapshots:
   vite@5.4.21(@types/node@26.1.1)(lightningcss@1.33.0)(sass@1.101.6):
     dependencies:
       esbuild: 0.21.5
-      postcss: 8.5.21
+      postcss: 8.5.22
       rollup: 4.62.2
     optionalDependencies:
       '@types/node': 26.1.1
@@ -9835,13 +9845,13 @@ snapshots:
       sass: 1.101.6
       yaml: 2.9.0
 
-  vitepress-demo-plugin@1.7.0(shiki@2.5.0)(vitepress@1.6.4(@algolia/client-search@5.56.0)(@types/node@26.1.1)(change-case@5.4.4)(lightningcss@1.33.0)(postcss@8.5.21)(sass@1.101.6)(search-insights@2.17.3)(typescript@6.0.3))(vue@3.5.40(typescript@6.0.3)):
+  vitepress-demo-plugin@1.7.0(shiki@2.5.0)(vitepress@1.6.4(@algolia/client-search@5.56.0)(@types/node@26.1.1)(change-case@5.4.4)(lightningcss@1.33.0)(postcss@8.5.22)(sass@1.101.6)(search-insights@2.17.3)(typescript@6.0.3))(vue@3.5.40(typescript@6.0.3)):
     dependencies:
       shiki: 2.5.0
-      vitepress: 1.6.4(@algolia/client-search@5.56.0)(@types/node@26.1.1)(change-case@5.4.4)(lightningcss@1.33.0)(postcss@8.5.21)(sass@1.101.6)(search-insights@2.17.3)(typescript@6.0.3)
+      vitepress: 1.6.4(@algolia/client-search@5.56.0)(@types/node@26.1.1)(change-case@5.4.4)(lightningcss@1.33.0)(postcss@8.5.22)(sass@1.101.6)(search-insights@2.17.3)(typescript@6.0.3)
       vue: 3.5.40(typescript@6.0.3)
 
-  vitepress@1.6.4(@algolia/client-search@5.56.0)(@types/node@26.1.1)(change-case@5.4.4)(lightningcss@1.33.0)(postcss@8.5.21)(sass@1.101.6)(search-insights@2.17.3)(typescript@6.0.3):
+  vitepress@1.6.4(@algolia/client-search@5.56.0)(@types/node@26.1.1)(change-case@5.4.4)(lightningcss@1.33.0)(postcss@8.5.22)(sass@1.101.6)(search-insights@2.17.3)(typescript@6.0.3):
     dependencies:
       '@docsearch/css': 3.8.2
       '@docsearch/js': 3.8.2(@algolia/client-search@5.56.0)(search-insights@2.17.3)
@@ -9862,7 +9872,7 @@ snapshots:
       vite: 5.4.21(@types/node@26.1.1)(lightningcss@1.33.0)(sass@1.101.6)
       vue: 3.5.40(typescript@6.0.3)
     optionalDependencies:
-      postcss: 8.5.21
+      postcss: 8.5.22
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@types/node'
