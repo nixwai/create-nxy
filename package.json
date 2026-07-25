@@ -45,7 +45,7 @@
     "@vitest/coverage-v8": "^4.1.10",
     "eslint": "^10.7.0",
     "eslint-plugin-format": "^2.0.1",
-    "happy-dom": "^20.11.0",
+    "happy-dom": "^20.11.1",
     "husky": "^9.1.7",
     "lint-staged": "^17.1.1",
     "postcss": "^8.5.22",
