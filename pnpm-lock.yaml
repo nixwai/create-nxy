@@ -46,7 +46,7 @@ importers:
         specifier: ^4.0.9
         version: 4.0.9(postcss@8.5.22)
       sass:
-        specifier: ^1.101.3
+        specifier: ^1.101.6
         version: 1.101.6
       stylelint:
         specifier: ^17.14.1
