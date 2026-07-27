@@ -43,7 +43,7 @@
     "@antfu/eslint-config": "^9.2.0",
     "@types/node": "^26.1.1",
     "@vitest/coverage-v8": "^4.1.10",
-    "eslint": "^10.7.0",
+    "eslint": "^10.8.0",
     "eslint-plugin-format": "^2.0.1",
     "happy-dom": "^20.11.1",
     "husky": "^9.1.7",
