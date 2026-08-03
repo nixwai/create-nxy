@@ -34,7 +34,7 @@ importers:
         specifier: ^9.1.7
         version: 9.1.7
       lint-staged:
-        specifier: ^17.2.0
+        specifier: ^17.3.0
         version: 17.3.0
       postcss:
         specifier: ^8.5.25
@@ -196,7 +196,7 @@ importers:
         specifier: ^8.2.0
         version: 8.2.0(@types/node@26.1.2)(jiti@2.7.0)(sass@1.102.0)(yaml@2.9.0)
       vue-tsc:
-        specifier: ^3.3.8
+        specifier: ^3.3.9
         version: 3.3.9(typescript@6.0.3)
 
   tooling:
