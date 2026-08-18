@@ -17,6 +17,6 @@
     "@vitejs/plugin-vue": "^6.0.8",
     "unocss": "^66.7.5",
     "vite": "^8.2.1",
-    "vue-tsc": "^3.3.9"
+    "vue-tsc": "^3.3.10"
   }
 }
