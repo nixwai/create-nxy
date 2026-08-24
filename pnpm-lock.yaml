@@ -82,7 +82,7 @@ importers:
         specifier: ^8.5.26
         version: 8.5.26
       unocss:
-        specifier: ^66.8.0
+        specifier: ^66.8.1
         version: 66.8.1(vite@8.2.2(@types/node@26.2.0)(jiti@2.7.0)(sass@1.103.1)(yaml@2.9.0))
       vitepress:
         specifier: ^1.6.4
@@ -160,11 +160,11 @@ importers:
   packages/presets:
     dependencies:
       '@unocss/preset-mini':
-        specifier: ^66.8.0
+        specifier: ^66.8.1
         version: 66.8.1
     devDependencies:
       unocss:
-        specifier: ^66.8.0
+        specifier: ^66.8.1
         version: 66.8.1(vite@8.2.2(@types/node@26.2.0)(jiti@2.7.0)(sass@1.103.1)(yaml@2.9.0))
 
   packages/utils:
@@ -180,7 +180,7 @@ importers:
   playground:
     dependencies:
       '@unocss/reset':
-        specifier: ^66.8.0
+        specifier: ^66.8.1
         version: 66.8.1
       vue:
         specifier: ^3.5.41
@@ -190,7 +190,7 @@ importers:
         specifier: ^6.0.8
         version: 6.0.8(vite@8.2.2(@types/node@26.2.0)(jiti@2.7.0)(sass@1.103.1)(yaml@2.9.0))(vue@3.5.41(typescript@6.0.3))
       unocss:
-        specifier: ^66.8.0
+        specifier: ^66.8.1
         version: 66.8.1(vite@8.2.2(@types/node@26.2.0)(jiti@2.7.0)(sass@1.103.1)(yaml@2.9.0))
       vite:
         specifier: ^8.2.2
