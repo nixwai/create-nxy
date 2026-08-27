@@ -8,6 +8,6 @@
     "optimize": "svgo -f . -o ."
   },
   "devDependencies": {
-    "svgo": "^4.0.2"
+    "svgo": "^4.1.0"
   }
 }
