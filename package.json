@@ -13,6 +13,7 @@
     "play:dev": "pnpm run -C playground dev",
     "play:build": "pnpm run -C playground build",
     "build": "pnpm run -C tooling build",
+    "release": "pnpm run -C tooling release",
     "design:release": "pnpm run -C tooling design:release",
     "design:build": "pnpm run -C tooling design:build",
     "design:publish": "pnpm run -C tooling design:publish",

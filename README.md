@@ -186,6 +186,7 @@ my-libs/
 | 脚本 | 说明 |
 | --- | --- |
 | `pnpm build` | 并行构建所有已选择的库 |
+| `pnpm release` | 使用 `bumpp` 将 `packages` 下所有项目统一升级到同一版本，并生成 commit/tag |
 | `pnpm <type>:build` | 构建指定库，例如 `pnpm design:build`、`pnpm tool:build` |
 | `pnpm <type>:release` | 使用 `bumpp` 更新指定库版本并生成 commit/tag |
 | `pnpm <type>:publish` | 发布指定库到 npm registry |
