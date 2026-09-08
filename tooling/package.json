@@ -27,11 +27,11 @@
   },
   "devDependencies": {
     "@types/gulp": "^4.0.18",
-    "bumpp": "^12.2.2",
+    "bumpp": "^12.3.0",
     "gulp": "^5.0.1",
     "gulp-cli": "^3.1.0",
     "npm-run-all2": "^9.0.3",
     "sucrase": "^3.35.1",
-    "tsdown": "^0.22.14"
+    "tsdown": "^0.23.0"
   }
 }

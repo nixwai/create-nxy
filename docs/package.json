@@ -12,8 +12,8 @@
     "docs:preview": "vitepress preview"
   },
   "devDependencies": {
-    "postcss": "^8.5.26",
-    "unocss": "^66.9.1",
+    "postcss": "^8.5.28",
+    "unocss": "^66.10.0",
     "vitepress": "^1.6.4",
     "vitepress-demo-plugin": "^1.8.0"
   }
