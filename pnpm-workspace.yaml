@@ -1,8 +1,8 @@
 minimumReleaseAgeExcludePrune: true
+trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 1440
 shellEmulator: true
 
-trustPolicy: no-downgrade
 packages:
   - tooling
   - tooling/*
