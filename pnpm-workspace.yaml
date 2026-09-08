@@ -1,9 +1,8 @@
+minimumReleaseAgeExcludePrune: true
+trustPolicyIgnoreAfter: 1440
 shellEmulator: true
 
 trustPolicy: no-downgrade
-
-trustPolicyIgnoreAfter: 1440
-
 packages:
   - tooling
   - tooling/*
@@ -12,11 +11,11 @@ packages:
   - playground
   - docs
 
+overrides:
+  glob@10.5.0: ^13.0.6
+  glob@^7.2.3: ^13.0.6
+
 allowBuilds:
   '@parcel/watcher': false
   esbuild: false
   vue-demi: false
-
-overrides:
-  glob@10.5.0: ^13.0.6
-  glob@^7.2.3: ^13.0.6
