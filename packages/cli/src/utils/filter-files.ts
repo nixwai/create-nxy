@@ -11,12 +11,17 @@ export async function filterFiles(projectPath: string, libs: string[] = [], feat
     `${projectPath}/packages/cli`,
     `${projectPath}/tooling/cli-system`,
   ];
-  for (const type in libFileMap) {
-    if (!libs.includes(type)) {
-      deletePaths.push(
-        `${projectPath}/packages/${libFileMap[type]}`,
-        `${projectPath}/tooling/${libFileMap[type]}`,
-      );
+  if (libs.length === 0) {
+    deletePaths.push(`${projectPath}/tooling`);
+  }
+  else {
+    for (const type in libFileMap) {
+      if (!libs.includes(type)) {
+        deletePaths.push(
+          `${projectPath}/packages/${libFileMap[type]}`,
+          `${projectPath}/tooling/${libFileMap[type]}`,
+        );
+      }
     }
   }
   for (const type in featureFileMap) {

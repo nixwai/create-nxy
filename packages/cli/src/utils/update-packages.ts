@@ -16,9 +16,12 @@ export async function updatePackages(
   format: number,
   features: string[] = [],
 ) {
+  const hasLibs = libs.length > 0;
   // 更新包名
   await changePackageName(projectPath, { name: `@${name}/monorepo` });
-  await changePackageName(`${projectPath}/tooling`, { name: `@${name}/tooling` });
+  if (hasLibs) {
+    await changePackageName(`${projectPath}/tooling`, { name: `@${name}/tooling` });
+  }
   for (let i = 0; i < libs.length; i++) {
     const type = libs[i];
     const libFile = libFileMap[type];
@@ -31,11 +34,15 @@ export async function updatePackages(
   }
   // 移除脚本命令
   await removePackageScripts(projectPath, 'cli:');
-  await removePackageScripts(`${projectPath}/tooling`, 'cli:');
+  if (hasLibs) {
+    await removePackageScripts(`${projectPath}/tooling`, 'cli:');
+  }
   for (const type in libFileMap) {
     if (!libs.includes(type)) {
       await removePackageScripts(projectPath, type);
-      await removePackageScripts(`${projectPath}/tooling`, `${type}:`);
+      if (hasLibs) {
+        await removePackageScripts(`${projectPath}/tooling`, `${type}:`);
+      }
     }
   }
   for (const type in featureScriptMap) {
@@ -48,18 +55,20 @@ export async function updatePackages(
     await removePackageDependencies(projectPath, cssPackageDependencies);
   }
   // 修改打包全部的脚本命令
-  if (libs.length) {
+  if (hasLibs) {
     await updateBuildScripts(projectPath, libs);
   }
   else {
-    await removePackageScriptKeys(projectPath, ['build']);
+    await removePackageScriptKeys(projectPath, ['build', 'release']);
   }
-  await removeWorkspacePackages(
-    projectPath,
-    Object.keys(featureFileMap)
-      .filter(type => !features.includes(type))
-      .map(type => featureFileMap[type]),
-  );
+  // 收集需要从 pnpm-workspace.yaml 移除的工作空间条目
+  const workspaceRemovals = Object.keys(featureFileMap)
+    .filter(type => !features.includes(type))
+    .map(type => featureFileMap[type]);
+  if (!hasLibs) {
+    workspaceRemovals.push('tooling', 'tooling/*');
+  }
+  await removeWorkspacePackages(projectPath, workspaceRemovals);
 }
 
 /** 移除工作空间包 */
