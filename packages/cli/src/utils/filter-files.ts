@@ -13,6 +13,7 @@ export async function filterFiles(projectPath: string, libs: string[] = [], feat
   ];
   if (libs.length === 0) {
     deletePaths.push(`${projectPath}/tooling`);
+    deletePaths.push(`${projectPath}/packages`);
   }
   else {
     for (const type in libFileMap) {
