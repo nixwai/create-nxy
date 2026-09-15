@@ -52,7 +52,7 @@
     "postcss": "^8.5.28",
     "postcss-html": "^2.0.0",
     "postcss-scss": "^4.0.9",
-    "sass": "^1.104.0",
+    "sass": "^1.104.1",
     "stylelint": "^17.15.0",
     "stylelint-config-recess-order": "^7.8.0",
     "stylelint-config-recommended-scss": "^17.0.1",
