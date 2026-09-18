@@ -1,7 +1,7 @@
 {
   "name": "@create-nxy/monorepo",
   "version": "1.0.0",
-  "packageManager": "pnpm@12.4.1",
+  "packageManager": "pnpm@12.4.2",
   "description": "",
   "author": "xy",
   "license": "MIT",
@@ -42,8 +42,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^9.5.1",
-    "@types/node": "^26.5.1",
-    "@vitest/coverage-v8": "^5.0.0",
+    "@types/node": "^26.6.1",
+    "@vitest/coverage-v8": "^5.0.1",
     "eslint": "^10.10.0",
     "eslint-plugin-format": "^2.0.1",
     "happy-dom": "^20.14.5",
@@ -59,9 +59,9 @@
     "stylelint-config-recommended-vue": "^2.0.0",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-order": "^8.1.1",
-    "stylelint-scss": "^7.2.0",
+    "stylelint-scss": "^7.3.0",
     "typescript": "^6.0.3",
-    "vitest": "^5.0.0"
+    "vitest": "^5.0.1"
   },
   "lint-staged": {
     "*.{vue,js,ts,tsx,jsx}": [
