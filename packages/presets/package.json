@@ -22,12 +22,12 @@
     "dist"
   ],
   "peerDependencies": {
-    "unocss": "^66.10.4"
+    "unocss": "^66.10.5"
   },
   "dependencies": {
-    "@unocss/preset-mini": "^66.10.4"
+    "@unocss/preset-mini": "^66.10.5"
   },
   "devDependencies": {
-    "unocss": "^66.10.4"
+    "unocss": "^66.10.5"
   }
 }
