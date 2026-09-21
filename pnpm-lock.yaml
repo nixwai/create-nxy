@@ -412,7 +412,7 @@ importers:
         specifier: ^11.4.0
         version: 11.4.0
       prettier:
-        specifier: ^3.9.7
+        specifier: ^3.9.8
         version: 3.9.8
       unplugin-vue:
         specifier: ^8.0.0
