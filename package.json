@@ -1,7 +1,7 @@
 {
   "name": "@create-nxy/monorepo",
   "version": "1.0.0",
-  "packageManager": "pnpm@12.4.2",
+  "packageManager": "pnpm@12.5.1",
   "description": "",
   "author": "xy",
   "license": "MIT",
@@ -44,7 +44,7 @@
     "@antfu/eslint-config": "^9.5.1",
     "@types/node": "^26.6.1",
     "@vitest/coverage-v8": "^5.0.1",
-    "eslint": "^10.10.0",
+    "eslint": "^10.11.0",
     "eslint-plugin-format": "^2.0.1",
     "happy-dom": "^20.14.5",
     "husky": "^9.1.7",
