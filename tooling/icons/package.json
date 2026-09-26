@@ -7,7 +7,7 @@
     "camelcase": "^9.0.0",
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.4.1",
-    "prettier": "^3.9.8",
+    "prettier": "^3.9.9",
     "unplugin-vue": "^8.0.0",
     "vue": "^3.5.43"
   }
