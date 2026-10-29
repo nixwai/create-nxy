@@ -240,7 +240,7 @@ importers:
         specifier: ^8.5.31
         version: 8.5.32
       unocss:
-        specifier: ^66.11.0
+        specifier: ^66.12.0
         version: 66.12.0(@oxc-project/types@0.155.0)(cac@7.1.0)(rolldown@1.2.15)(rollup@4.65.1)(srvx@1.0.8)(vite@8.3.5(@types/node@26.6.5)(jiti@2.7.0)(sass@1.106.1)(yaml@2.9.1))
       vitepress:
         specifier: ^1.6.4
@@ -318,11 +318,11 @@ importers:
   packages/presets:
     dependencies:
       '@unocss/preset-mini':
-        specifier: ^66.11.0
+        specifier: ^66.12.0
         version: 66.12.0
     devDependencies:
       unocss:
-        specifier: ^66.11.0
+        specifier: ^66.12.0
         version: 66.12.0(@oxc-project/types@0.155.0)(cac@7.1.0)(rolldown@1.2.15)(rollup@4.65.1)(srvx@1.0.8)(vite@8.3.5(@types/node@26.6.5)(jiti@2.7.0)(sass@1.106.1)(yaml@2.9.1))
 
   packages/utils:
@@ -338,7 +338,7 @@ importers:
   playground:
     dependencies:
       '@unocss/reset':
-        specifier: ^66.11.0
+        specifier: ^66.12.0
         version: 66.12.0
       vue:
         specifier: ^3.5.44
@@ -348,7 +348,7 @@ importers:
         specifier: ^6.0.10
         version: 6.0.10(vite@8.3.5(@types/node@26.6.5)(jiti@2.7.0)(sass@1.106.1)(yaml@2.9.1))(vue@3.5.44(typescript@6.0.3))
       unocss:
-        specifier: ^66.11.0
+        specifier: ^66.12.0
         version: 66.12.0(@oxc-project/types@0.155.0)(cac@7.1.0)(rolldown@1.2.15)(rollup@4.65.1)(srvx@1.0.8)(vite@8.3.5(@types/node@26.6.5)(jiti@2.7.0)(sass@1.106.1)(yaml@2.9.1))
       vite:
         specifier: ^8.3.5
