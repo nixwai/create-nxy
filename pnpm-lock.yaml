@@ -195,7 +195,7 @@ importers:
         specifier: ^17.6.0
         version: 17.6.0
       postcss:
-        specifier: ^8.5.31
+        specifier: ^8.5.32
         version: 8.5.32
       postcss-html:
         specifier: ^2.0.0
@@ -237,7 +237,7 @@ importers:
   docs:
     devDependencies:
       postcss:
-        specifier: ^8.5.31
+        specifier: ^8.5.32
         version: 8.5.32
       unocss:
         specifier: ^66.12.0
