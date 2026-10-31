@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "devDependencies": {
-    "@tsdown/css": "^0.23.2",
+    "@tsdown/css": "^0.23.3",
     "unplugin-vue": "^8.0.0",
     "vue": "^3.5.44"
   }
