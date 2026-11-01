@@ -389,8 +389,8 @@ importers:
         specifier: ^0.23.3
         version: 0.23.3(jiti@2.7.0)(postcss@8.5.32)(sass@1.107.1)(tsdown@0.23.3)(yaml@2.9.1)
       unplugin-vue:
-        specifier: ^8.0.0
-        version: 8.0.0(@types/node@26.6.6)(jiti@2.7.0)(rolldown@1.2.15)(rollup@4.65.1)(sass@1.107.1)(vue@3.5.44(typescript@6.0.3))(yaml@2.9.1)
+        specifier: ^8.0.1
+        version: 8.0.1(@types/node@26.6.6)(jiti@2.7.0)(rolldown@1.2.15)(rollup@4.65.1)(sass@1.107.1)(vue@3.5.44(typescript@6.0.3))(yaml@2.9.1)
       vue:
         specifier: ^3.5.44
         version: 3.5.44(typescript@6.0.3)
@@ -415,8 +415,8 @@ importers:
         specifier: ^3.9.10
         version: 3.9.10
       unplugin-vue:
-        specifier: ^8.0.0
-        version: 8.0.0(@types/node@26.6.6)(jiti@2.7.0)(rolldown@1.2.15)(rollup@4.65.1)(sass@1.107.1)(vue@3.5.44(typescript@6.0.3))(yaml@2.9.1)
+        specifier: ^8.0.1
+        version: 8.0.1(@types/node@26.6.6)(jiti@2.7.0)(rolldown@1.2.15)(rollup@4.65.1)(sass@1.107.1)(vue@3.5.44(typescript@6.0.3))(yaml@2.9.1)
       vue:
         specifier: ^3.5.44
         version: 3.5.44(typescript@6.0.3)
@@ -4724,8 +4724,8 @@ packages:
     resolution: {integrity: sha512-xVToRh2CTmLk2HnEG7ac4rl1MJTT3RFkpS8B++/SnB0kXvuaavD+n3m/vrzyWQOdJNSZQACnbz01pnppbwV5BA==}
     engines: {node: '>=20.19.0'}
 
-  unplugin-vue@8.0.0:
-    resolution: {integrity: sha512-D6TI8IhakUduwNb31+yLfqRAkEYb3yhlwy6DODzO4BLAxvGeefQ070oy1RQ6zmuoZwH4CnqW1jLOXzu3Zjajig==}
+  unplugin-vue@8.0.1:
+    resolution: {integrity: sha512-STAbBUUxGJPX3+nWODheE4TCA5pEsOoZoxTpvxd6Kskk/a4tS60xoBD2i5qW+BQokdhbJiU2vTA+SYr1Kxrxug==}
     engines: {node: ^22.18.0 || ^24.11.0 || >=26.0.0}
     peerDependencies:
       vue: ^3.2.25
@@ -9459,7 +9459,7 @@ snapshots:
       pathe: 2.0.3
       picomatch: 4.0.7
 
-  unplugin-vue@8.0.0(@types/node@26.6.6)(jiti@2.7.0)(rolldown@1.2.15)(rollup@4.65.1)(sass@1.107.1)(vue@3.5.44(typescript@6.0.3))(yaml@2.9.1):
+  unplugin-vue@8.0.1(@types/node@26.6.6)(jiti@2.7.0)(rolldown@1.2.15)(rollup@4.65.1)(sass@1.107.1)(vue@3.5.44(typescript@6.0.3))(yaml@2.9.1):
     dependencies:
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.31
