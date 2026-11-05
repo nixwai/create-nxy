@@ -43,7 +43,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^9.5.1",
     "@types/node": "^26.6.6",
-    "@vitest/coverage-v8": "^5.0.5",
+    "@vitest/coverage-v8": "^5.1.0",
     "eslint": "^10.14.0",
     "eslint-plugin-format": "^2.0.1",
     "happy-dom": "^21.0.4",
@@ -54,14 +54,14 @@
     "postcss-scss": "^4.0.9",
     "sass": "^1.107.1",
     "stylelint": "^17.16.0",
-    "stylelint-config-recess-order": "^7.9.0",
+    "stylelint-config-recess-order": "^7.10.0",
     "stylelint-config-recommended-scss": "^17.0.1",
     "stylelint-config-recommended-vue": "^2.0.0",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-order": "^8.1.2",
     "stylelint-scss": "^7.4.0",
     "typescript": "^6.0.3",
-    "vitest": "^5.0.5"
+    "vitest": "^5.1.0"
   },
   "lint-staged": {
     "*.{vue,js,ts,tsx,jsx}": [
