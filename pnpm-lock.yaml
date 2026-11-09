@@ -163,8 +163,8 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  glob@10.5.0: ^14.0.3
-  glob@^7.2.3: ^14.0.3
+  glob@10.5.0: ^14.0.4
+  glob@^7.2.3: ^14.0.4
 
 importers:
 
@@ -204,7 +204,7 @@ importers:
         specifier: ^4.0.9
         version: 4.0.9(postcss@8.5.32)
       sass:
-        specifier: ^1.107.1
+        specifier: ^1.108.0
         version: 1.108.1
       stylelint:
         specifier: ^17.16.0
@@ -258,7 +258,7 @@ importers:
         specifier: ^11.4.1
         version: 11.4.1
       glob:
-        specifier: ^14.0.3
+        specifier: ^14.0.4
         version: 14.0.4
       ora:
         specifier: ^10.0.0
