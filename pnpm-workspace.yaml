@@ -12,8 +12,8 @@ packages:
   - docs
 
 overrides:
-  glob@10.5.0: ^14.0.5
-  glob@^7.2.3: ^14.0.5
+  glob@10.5.0: ^14.0.6
+  glob@^7.2.3: ^14.0.6
 
 allowBuilds:
   '@parcel/watcher': false
