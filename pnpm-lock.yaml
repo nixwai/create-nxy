@@ -172,8 +172,8 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  glob@10.5.0: ^14.0.5
-  glob@^7.2.3: ^14.0.5
+  glob@10.5.0: ^14.0.6
+  glob@^7.2.3: ^14.0.6
 
 importers:
 
@@ -267,7 +267,7 @@ importers:
         specifier: ^11.4.1
         version: 11.4.1
       glob:
-        specifier: ^14.0.5
+        specifier: ^14.0.6
         version: 14.0.6
       ora:
         specifier: ^10.0.0
