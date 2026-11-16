@@ -54,20 +54,26 @@ export const promptsOptions: PromptObject[] = [
     ],
   },
   {
-    type: (prev, values) => isProjectMode(prev, values) ? 'text' : null,
+    type: (prev, values) => isProjectMode(prev, values)
+      ? 'text'
+      : null,
     name: 'name',
     message: '项目名',
     validate: validateRequired,
   },
   {
-    type: (prev, values) => isToolingMode(prev, values) ? 'text' : null,
+    type: (prev, values) => isToolingMode(prev, values)
+      ? 'text'
+      : null,
     name: 'targetPath',
     message: '项目路径',
     initial: '.',
     validate: validateRequired,
   },
   {
-    type: (prev, values) => isToolingMode(prev, values) ? 'select' : null,
+    type: (prev, values) => isToolingMode(prev, values)
+      ? 'select'
+      : null,
     name: 'hasTooling',
     message: '项目是否已有 tooling 文件夹',
     choices: [
@@ -85,7 +91,9 @@ export const promptsOptions: PromptObject[] = [
     ],
   },
   {
-    type: (prev, values) => isProjectMode(prev, values) ? 'select' : null,
+    type: (prev, values) => isProjectMode(prev, values)
+      ? 'select'
+      : null,
     name: 'format',
     message: '库名格式',
     choices: [
@@ -94,13 +102,17 @@ export const promptsOptions: PromptObject[] = [
     ],
   },
   {
-    type: (prev, values) => isProjectMode(prev, values) ? 'multiselect' : null,
+    type: (prev, values) => isProjectMode(prev, values)
+      ? 'multiselect'
+      : null,
     name: 'libs',
     message: '库类型',
     choices: libChoices,
   },
   {
-    type: (prev, values) => isProjectMode(prev, values) ? 'multiselect' : null,
+    type: (prev, values) => isProjectMode(prev, values)
+      ? 'multiselect'
+      : null,
     name: 'features',
     message: '附加功能',
     choices: [
@@ -110,20 +122,26 @@ export const promptsOptions: PromptObject[] = [
     ],
   },
   {
-    type: (prev, values) => isToolingMode(prev, values) ? 'select' : null,
+    type: (prev, values) => isToolingMode(prev, values)
+      ? 'select'
+      : null,
     name: 'toolingLib',
     message: '打包库',
     choices: libChoices,
   },
   {
-    type: (prev, values) => isToolingMode(prev, values) ? 'text' : null,
+    type: (prev, values) => isToolingMode(prev, values)
+      ? 'text'
+      : null,
     name: 'pkgDirName',
     message: 'pkg 根目录名称',
     initial: 'packages',
     validate: validatePathSegment,
   },
   {
-    type: (prev, values) => isToolingMode(prev, values) ? 'text' : null,
+    type: (prev, values) => isToolingMode(prev, values)
+      ? 'text'
+      : null,
     name: 'targetDirName',
     message: '打包目标库文件夹名称',
     initial: (_prev, values) => libFileMap[values.toolingLib],

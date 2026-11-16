@@ -10,20 +10,31 @@ export default antfu(
   {
     files: ['**/*.vue'],
     rules: {
-      'vue/max-attributes-per-line': ['error', { singleline: 5, multiline: { max: 1 } }],
-      'vue/html-self-closing': ['error', {
-        html: { void: 'never', normal: 'always', component: 'always' },
-        svg: 'always',
-        math: 'always',
-      }],
+      'vue/max-attributes-per-line': [
+        'error',
+        {
+          singleline: 5,
+          multiline: { max: 1 },
+        },
+      ],
+      'vue/html-self-closing': [
+        'error',
+        {
+          html: { void: 'never', normal: 'always', component: 'always' },
+          svg: 'always',
+          math: 'always',
+        },
+      ],
     },
   },
   {
     rules: {
       'style/semi': ['error', 'always'], // 末尾带分号
-      'object-curly-newline': ['error', { multiline: true }], // 花括号内换行规则
       'curly': ['error', 'all'], // 循环/判断语句后必须使用花括号
-      'style/max-statements-per-line': ['error', { max: 2 }],
+      'style/max-statements-per-line': [
+        'error',
+        { max: 2 },
+      ],
     },
   },
 );

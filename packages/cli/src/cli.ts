@@ -25,8 +25,12 @@ async function createProject(answers: prompts.Answers<string>) {
   if (!answers.name || typeof answers.clone !== 'number' || typeof answers.format !== 'number') {
     return;
   }
-  const libs = Array.isArray(answers.libs) ? answers.libs : [];
-  const features = Array.isArray(answers.features) ? answers.features : [];
+  const libs = Array.isArray(answers.libs)
+    ? answers.libs
+    : [];
+  const features = Array.isArray(answers.features)
+    ? answers.features
+    : [];
 
   const downSpinner = ora('正在构建...').start();
   try {

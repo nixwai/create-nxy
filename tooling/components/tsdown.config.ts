@@ -12,7 +12,9 @@ const sharedConfig = {
   sourcemap: true,
   clean: false,
   platform: 'neutral' as const,
-  deps: { neverBundle: ['vue', '@vueuse/core'] },
+  deps: {
+    neverBundle: ['vue', '@vueuse/core'],
+  },
   plugins: [
     Vue({ isProduction: true }),
     styleInjectPlugin(),
