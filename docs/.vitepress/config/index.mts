@@ -10,13 +10,25 @@ export default defineConfig({
   base: '/libs/',
   outDir: resolve(__dirname, '../../../dist/docs'),
   vite: {
-    plugins: [UnoCSS() as any],
-    css: { preprocessorOptions: { scss: { api: 'modern-compiler' } } },
+    plugins: [
+      UnoCSS() as any,
+    ],
+    css: {
+      preprocessorOptions: {
+        scss: { api: 'modern-compiler' },
+      },
+    },
   },
-  themeConfig: { socialLinks: [{ icon: 'github', link: 'https://github.com/nixwai/create-nxy' }] },
+  themeConfig: {
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/nixwai/create-nxy' },
+    ],
+  },
   markdown: {
     config(md) {
-      md.use(vitepressDemoPlugin, { demoDir: resolve(__dirname, '../../examples') });
+      md.use(vitepressDemoPlugin, {
+        demoDir: resolve(__dirname, '../../examples'),
+      });
     },
   },
   locales: {

@@ -8,7 +8,9 @@ const sharedConfig = {
   entry: { index: 'src/index.ts' },
   clean: false,
   platform: 'neutral' as const,
-  deps: { neverBundle: ['vue'] },
+  deps: {
+    neverBundle: ['vue'],
+  },
   plugins: [
     Vue({ isProduction: true }),
   ],

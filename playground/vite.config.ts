@@ -5,7 +5,13 @@ import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), Unocss()],
+  plugins: [
+    vue(),
+    Unocss(),
+  ],
   base: './',
-  build: { emptyOutDir: true, outDir: resolve(import.meta.dirname, '../dist/play') },
+  build: {
+    emptyOutDir: true,
+    outDir: resolve(import.meta.dirname, '../dist/play'),
+  },
 });

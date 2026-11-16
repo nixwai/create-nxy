@@ -8,7 +8,10 @@ describe('test objectFormatKey', () => {
       time: ['2021', '2024'],
       c1: 1,
       c2: 2,
-      option: { child: ['q', 'w'], name: 'n' },
+      option: {
+        child: ['q', 'w'],
+        name: 'n',
+      },
       o: 4,
     };
 
@@ -20,7 +23,10 @@ describe('test objectFormatKey', () => {
       ['c1', 'cAry[0]'],
       ['c2', 'cAry[1]'],
       ['option.child[0]', 'option.a'],
-      [['option', 'child', '1'], ['option', 'b']],
+      [
+        ['option', 'child', '1'],
+        ['option', 'b'],
+      ],
       ['option.child'],
     ];
 

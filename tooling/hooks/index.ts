@@ -9,8 +9,14 @@ export const release = series(
 
 export function build() {
   return runBuildSteps('use build', [
-    { name: 'clean dist', run: () => delPath(useOutput) },
-    { name: 'bundle with tsdown', run: () => runBuildCommand('tsdown --config tsdown.config.ts') },
+    {
+      name: 'clean dist',
+      run: () => delPath(useOutput),
+    },
+    {
+      name: 'bundle with tsdown',
+      run: () => runBuildCommand('tsdown --config tsdown.config.ts'),
+    },
   ]);
 }
 

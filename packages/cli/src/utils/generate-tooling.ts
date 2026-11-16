@@ -115,8 +115,12 @@ async function updateToolingPaths(
       replace: `createModulePaths('${targetDirName}')`,
     },
   ]);
-  const pkgDirPath = pkgDirName === '.' ? '' : `${pkgDirName}/`;
-  const targetDirPath = targetDirName === '.' ? '' : `${targetDirName}/`;
+  const pkgDirPath = pkgDirName === '.'
+    ? ''
+    : `${pkgDirName}/`;
+  const targetDirPath = targetDirName === '.'
+    ? ''
+    : `${targetDirName}/`;
   await replaceInFile(resolve(toolingPath, `${defaultDirName}/index.ts`), [
     {
       search: `../../packages/${defaultDirName}/package.json`,
@@ -236,7 +240,12 @@ function mergePackageScripts(sourcePkg: Record<string, any>, targetPkg: Record<s
   }
   const targetBuildLibs = targetPkg.scripts?.build?.split('run-p ')[1]?.trim().split(/\s+/).filter(Boolean) || [];
   const sourceBuildLibs = sourcePkg.scripts?.build?.split('run-p ')[1]?.trim().split(/\s+/).filter(Boolean) || [];
-  const buildScript = `run-p ${[...new Set([...targetBuildLibs, ...sourceBuildLibs])].join(' ')}`;
+  const buildScript = `run-p ${[
+    ...new Set([
+      ...targetBuildLibs,
+      ...sourceBuildLibs,
+    ]),
+  ].join(' ')}`;
 
   targetPkg.scripts = {
     ...targetPkg.scripts,

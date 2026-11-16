@@ -64,10 +64,14 @@ function formatProgressLine(
   status: ProgressStatus,
   label: string,
 ) {
-  const percent = total === 0 ? 100 : Math.round((completed / total) * 100);
+  const percent = total === 0
+    ? 100
+    : Math.round((completed / total) * 100);
   const filled = Math.round((percent / 100) * BAR_WIDTH);
   const bar = `${'#'.repeat(filled)}${'-'.repeat(BAR_WIDTH - filled)}`;
-  const state = status === 'running' ? `${completed}/${total}` : status;
+  const state = status === 'running'
+    ? `${completed}/${total}`
+    : status;
 
   return `[${bar}] ${String(percent).padStart(3)}% ${title} ${state} - ${label}`;
 }
