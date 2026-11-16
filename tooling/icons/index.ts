@@ -14,9 +14,18 @@ export const release = series(
 
 export function build() {
   return runBuildSteps('icon build', [
-    { name: 'generate icon components', run: () => generateIconComp() },
-    { name: 'clean dist', run: () => delPath(iconOutput) },
-    { name: 'bundle with tsdown', run: () => runBuildCommand('tsdown --config tsdown.config.ts') },
+    {
+      name: 'generate icon components',
+      run: () => generateIconComp(),
+    },
+    {
+      name: 'clean dist',
+      run: () => delPath(iconOutput),
+    },
+    {
+      name: 'bundle with tsdown',
+      run: () => runBuildCommand('tsdown --config tsdown.config.ts'),
+    },
   ]);
 }
 

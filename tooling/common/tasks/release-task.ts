@@ -18,8 +18,14 @@ export function createReleaseOptions(options: ReleaseOptions): VersionBumpOption
     cwd,
     noGitCheck: true,
     push: true,
-    ...(files ? { files: [...files] } : {}),
-    tag: scope ? `v{version}(${scope})` : 'v{version}',
+    ...(files
+      ? {
+          files: [...files],
+        }
+      : {}),
+    tag: scope
+      ? `v{version}(${scope})`
+      : 'v{version}',
   };
 }
 

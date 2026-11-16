@@ -26,11 +26,17 @@ export async function updatePackages(
     const type = libs[i];
     const libFile = libFileMap[type];
     await changePackageName(`${projectPath}/tooling/${libFile}`, { name: `@${name}/build-${libFile}` });
-    const libType = type === 'icon' ? 'icons-vue' : type;
-    const libName = format === 0 ? `@${name}/${libType}` : `${name}-${libType}`;
+    const libType = type === 'icon'
+      ? 'icons-vue'
+      : type;
+    const libName = format === 0
+      ? `@${name}/${libType}`
+      : `${name}-${libType}`;
     await changePackageName(`${projectPath}/packages/${libFile}`, { name: libName });
     // 添加工作空间库包
-    await changePackageName(projectPath, { dependencies: { [libName]: 'workspace:*' } });
+    await changePackageName(projectPath, {
+      dependencies: { [libName]: 'workspace:*' },
+    });
   }
   // 移除脚本命令
   await removePackageScripts(projectPath, 'cli:');
@@ -92,7 +98,9 @@ async function removeWorkspacePackages(projectPath: string, packages: string[]) 
     })
     .join('\n');
 
-  await fs.writeFile(workspacePath, nextContent.endsWith('\n') ? nextContent : `${nextContent}\n`);
+  await fs.writeFile(workspacePath, nextContent.endsWith('\n')
+    ? nextContent
+    : `${nextContent}\n`);
 }
 
 /** 同步 tooling 的 build 脚本 */

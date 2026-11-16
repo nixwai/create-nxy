@@ -45,8 +45,12 @@ export function styleInjectPlugin(): TsdownPlugin {
 
           const injection = cssPath[key].map((cssFilePath) => {
             cssFilePath = relative(dirname(normalizePath(bundler.fileName)), cssFilePath).replaceAll(/[\\/]+/g, '/');
-            cssFilePath = cssFilePath.startsWith('.') ? cssFilePath : `./${cssFilePath}`;
-            return format === 'es' ? `import '${cssFilePath}';\n` : `require('${cssFilePath}');\n`;
+            cssFilePath = cssFilePath.startsWith('.')
+              ? cssFilePath
+              : `./${cssFilePath}`;
+            return format === 'es'
+              ? `import '${cssFilePath}';\n`
+              : `require('${cssFilePath}');\n`;
           }).join('');
 
           bundler.code = injectBeforeSourceMap(bundler.code, injection);
@@ -67,7 +71,9 @@ function injectBeforeSourceMap(code: string, injection: string) {
 
   const sourceMapIndex = code.lastIndexOf('//# sourceMappingURL=');
   if (sourceMapIndex === -1) {
-    return code.endsWith('\n') ? `${code}${injection}` : `${code}\n${injection}`;
+    return code.endsWith('\n')
+      ? `${code}${injection}`
+      : `${code}\n${injection}`;
   }
 
   const beforeSourceMap = code.slice(0, sourceMapIndex).trimEnd();

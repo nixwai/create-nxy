@@ -10,7 +10,9 @@ const sharedConfig = {
   },
   clean: false,
   platform: 'neutral' as const,
-  deps: { neverBundle: ['unocss', /@unocss\/.*/] },
+  deps: {
+    neverBundle: ['unocss', /@unocss\/.*/],
+  },
   outputOptions: { exports: 'named' as const },
 };
 
