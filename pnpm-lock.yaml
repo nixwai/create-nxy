@@ -207,8 +207,8 @@ importers:
         specifier: ^8.5.33
         version: 8.5.33
       postcss-html:
-        specifier: ^2.0.0
-        version: 2.0.0(postcss@8.5.33)
+        specifier: ^2.0.1
+        version: 2.0.1(postcss@8.5.33)
       postcss-scss:
         specifier: ^4.0.9
         version: 4.0.9(postcss@8.5.33)
@@ -226,7 +226,7 @@ importers:
         version: 18.0.0(postcss@8.5.33)(stylelint@18.0.0)
       stylelint-config-recommended-vue:
         specifier: ^2.0.0
-        version: 2.0.0(postcss-html@2.0.0(postcss@8.5.33))(stylelint-config-html@2.0.0(postcss-html@2.0.0(postcss@8.5.33))(stylelint@18.0.0))(stylelint-config-recommended-scss@18.0.0(postcss@8.5.33)(stylelint@18.0.0))(stylelint-config-recommended@19.0.0(stylelint@18.0.0))(stylelint@18.0.0)
+        version: 2.0.0(postcss-html@2.0.1(postcss@8.5.33))(stylelint-config-html@2.0.0(postcss-html@2.0.1(postcss@8.5.33))(stylelint@18.0.0))(stylelint-config-recommended-scss@18.0.0(postcss@8.5.33)(stylelint@18.0.0))(stylelint-config-recommended@19.0.0(stylelint@18.0.0))(stylelint@18.0.0)
       stylelint-config-standard:
         specifier: ^41.0.0
         version: 41.0.0(stylelint@18.0.0)
@@ -4025,8 +4025,8 @@ packages:
   pnpm-workspace-yaml@1.9.1:
     resolution: {integrity: sha512-Xj/T2X6DNAWbtk/9UQ0/TJRswltiHZevmcMjqoL7WrpJi67lu3qaslU4+I+zJ8wtwqmuvAE0KkB8rbv2ZdogBg==}
 
-  postcss-html@2.0.0:
-    resolution: {integrity: sha512-f2Rvw5FCollEfVj3wfN7JdQb7n2rNIthW+epw2EByio7M6P7RH0BTj8a/ODHrUXd0cmO7ychb6YniymV93182Q==}
+  postcss-html@2.0.1:
+    resolution: {integrity: sha512-FqutI3u6D7j28ZgviEFjGCbId174THaVxFAMe/yd6Y/+BSQidYYh2nRCxFk8btwEV64f3TvfNz7ureGnkzqtmA==}
     engines: {node: ^22.12 || >=24}
     peerDependencies:
       postcss: ^8.5.0
@@ -8677,7 +8677,7 @@ snapshots:
     dependencies:
       yaml: 2.9.1
 
-  postcss-html@2.0.0(postcss@8.5.33):
+  postcss-html@2.0.1(postcss@8.5.33):
     dependencies:
       htmlparser2: 9.1.0
       js-tokens: 9.0.1
@@ -9076,9 +9076,9 @@ snapshots:
 
   strip-indent@4.1.1: {}
 
-  stylelint-config-html@2.0.0(postcss-html@2.0.0(postcss@8.5.33))(stylelint@18.0.0):
+  stylelint-config-html@2.0.0(postcss-html@2.0.1(postcss@8.5.33))(stylelint@18.0.0):
     dependencies:
-      postcss-html: 2.0.0(postcss@8.5.33)
+      postcss-html: 2.0.1(postcss@8.5.33)
       stylelint: 18.0.0
 
   stylelint-config-recess-order@7.10.0(stylelint-order@8.1.3(stylelint@18.0.0))(stylelint@18.0.0):
@@ -9095,12 +9095,12 @@ snapshots:
     optionalDependencies:
       postcss: 8.5.33
 
-  stylelint-config-recommended-vue@2.0.0(postcss-html@2.0.0(postcss@8.5.33))(stylelint-config-html@2.0.0(postcss-html@2.0.0(postcss@8.5.33))(stylelint@18.0.0))(stylelint-config-recommended-scss@18.0.0(postcss@8.5.33)(stylelint@18.0.0))(stylelint-config-recommended@19.0.0(stylelint@18.0.0))(stylelint@18.0.0):
+  stylelint-config-recommended-vue@2.0.0(postcss-html@2.0.1(postcss@8.5.33))(stylelint-config-html@2.0.0(postcss-html@2.0.1(postcss@8.5.33))(stylelint@18.0.0))(stylelint-config-recommended-scss@18.0.0(postcss@8.5.33)(stylelint@18.0.0))(stylelint-config-recommended@19.0.0(stylelint@18.0.0))(stylelint@18.0.0):
     dependencies:
-      postcss-html: 2.0.0(postcss@8.5.33)
+      postcss-html: 2.0.1(postcss@8.5.33)
       semver: 7.8.6
       stylelint: 18.0.0
-      stylelint-config-html: 2.0.0(postcss-html@2.0.0(postcss@8.5.33))(stylelint@18.0.0)
+      stylelint-config-html: 2.0.0(postcss-html@2.0.1(postcss@8.5.33))(stylelint@18.0.0)
       stylelint-config-recommended: 19.0.0(stylelint@18.0.0)
     optionalDependencies:
       stylelint-config-recommended-scss: 18.0.0(postcss@8.5.33)(stylelint@18.0.0)

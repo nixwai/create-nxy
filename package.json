@@ -50,7 +50,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^17.6.1",
     "postcss": "^8.5.33",
-    "postcss-html": "^2.0.0",
+    "postcss-html": "^2.0.1",
     "postcss-scss": "^4.0.9",
     "sass": "^1.108.2",
     "stylelint": "^18.0.0",
