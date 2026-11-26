@@ -5,6 +5,6 @@
   "devDependencies": {
     "@tsdown/css": "^0.23.7",
     "unplugin-vue": "^8.0.1",
-    "vue": "^3.5.45"
+    "vue": "^3.5.46"
   }
 }
